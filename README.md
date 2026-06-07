@@ -1,12 +1,12 @@
-# Luxe Concierge Hotel Management System
+# UMM Hotel Management System
 
-Welcome to the **Luxe Concierge Hotel Management System**, a comprehensive web-based platform designed to streamline hotel operations, enhance guest experiences, and provide administrative control for hotel staff. This application serves both guests and hotel administrators with tailored interfaces and functionality to ensure a seamless hospitality experience.
+Welcome to the **UMM Hotel Management System**, a comprehensive web-based platform designed to streamline hotel operations, enhance guest experiences, and provide administrative control for hotel staff. This application serves both guests and hotel administrators with tailored interfaces and functionality to ensure a seamless hospitality experience.
 
 ---
 
 ## 🌟 System Overview
 
-The Luxe Concierge system is built with a focus on modern web design, utilizing HTML, CSS (via Tailwind CSS), and JavaScript. It provides a robust, responsive, and intuitive interface for managing everything from room reservations to maintenance reporting.
+The UMM system is built with a focus on modern web design, utilizing HTML, CSS (via Tailwind CSS), and JavaScript. It provides a robust, responsive, and intuitive interface for managing everything from room reservations to maintenance reporting.
 
 The platform is divided into two primary experiences, strictly gated by an authentication layer (`secure_access.html`):
 1. **Guest Experience**: Focused on convenience, booking, and in-stay support.
