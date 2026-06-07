@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title> Luxe Concierge | Room Reports </title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"> </script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#d8e3fa",
+                        "surface-container-high": "#dee8ff",
+                        "surface": "#f9f9ff",
+                        "on-primary-fixed": "#0d1c32",
+                        "on-secondary-container": "#785a1a",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#111c2c",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#454748",
+                        "tertiary-fixed-dim": "#c5c7c8",
+                        "surface-tint": "#515f78",
+                        "on-secondary-fixed": "#261900",
+                        "surface-bright": "#f9f9ff",
+                        "tertiary-container": "#191c1d",
+                        "background": "#f9f9ff",
+                        "on-surface-variant": "#44474d",
+                        "on-primary-container": "#76849f",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#b9c7e4",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#000000",
+                        "surface-container": "#e7eeff",
+                        "surface-container-low": "#f0f3ff",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#ffdea5",
+                        "outline": "#75777e",
+                        "on-secondary-fixed-variant": "#5d4201",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#e9c176",
+                        "inverse-primary": "#b9c7e4",
+                        "primary": "#000000",
+                        "outline-variant": "#c5c6cd",
+                        "inverse-surface": "#263142",
+                        "on-tertiary-fixed": "#191c1d",
+                        "surface-dim": "#cfdaf1",
+                        "secondary": "#775a19",
+                        "secondary-container": "#fed488",
+                        "primary-container": "#0d1c32",
+                        "primary-fixed": "#d6e3ff",
+                        "on-primary-fixed-variant": "#39475f",
+                        "on-tertiary-container": "#828485",
+                        "inverse-on-surface": "#ebf1ff",
+                        "surface-container-highest": "#d8e3fa",
+                        "tertiary-fixed": "#e1e3e4",
+                        "on-background": "#111c2c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "md": "24px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "xs": "4px",
+                        "sm": "12px",
+                        "lg": "40px",
+                        "margin-desktop": "48px",
+                        "xl": "64px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-lg-mobile": ["Libre Caslon Text"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Libre Caslon Text"],
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Libre Caslon Text"],
+                        "label-md": ["Inter"],
+                        "headline-xl": ["Libre Caslon Text"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {
+                            "lineHeight": "24px",
+                            "fontWeight": "400"
+                        }],
+                        "body-sm": ["14px", {
+                            "lineHeight": "20px",
+                            "fontWeight": "400"
+                        }],
+                        "headline-lg-mobile": ["24px", {
+                            "lineHeight": "32px",
+                            "fontWeight": "400"
+                        }],
+                        "body-lg": ["18px", {
+                            "lineHeight": "28px",
+                            "fontWeight": "400"
+                        }],
+                        "headline-md": ["24px", {
+                            "lineHeight": "32px",
+                            "fontWeight": "400"
+                        }],
+                        "label-sm": ["11px", {
+                            "lineHeight": "14px",
+                            "fontWeight": "500"
+                        }],
+                        "headline-lg": ["32px", {
+                            "lineHeight": "40px",
+                            "fontWeight": "400"
+                        }],
+                        "label-md": ["12px", {
+                            "lineHeight": "16px",
+                            "letterSpacing": "0.05em",
+                            "fontWeight": "600"
+                        }],
+                        "headline-xl": ["48px", {
+                            "lineHeight": "56px",
+                            "letterSpacing": "-0.01em",
+                            "fontWeight": "400"
+                        }]
+                    }
+                },
+            },
+        } </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL'
+                0, 'wght'
+                400, 'GRAD'
+                0, 'opsz'
+                24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #c5c6cd;
+            border-radius: 10px;
+        }
+
+        .report-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .report-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0px 4px 20px rgba(10, 25, 47, 0.06);
+        }
+
+        .fade-in {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .star-rating.material-symbols-outlined {
+            cursor: pointer;
+            transition: color 0.15s ease;
+        }
+
+        .star-rating.material-symbols-outlined:hover,
+        .star-rating.material-symbols-outlined.active {
+            color: #775a19;
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .severity-critical {
+            border-left: 4px solid #ba1a1a;
+        }
+
+        .severity-major {
+            border-left: 4px solid #e9c176;
+        }
+
+        .severity-minor {
+            border-left: 4px solid #515f78;
+        }
+
+        .severity-cosmetic {
+            border-left: 4px solid #c5c6cd;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+    <script>
+            // Auth Guard: Must be logged in
+            (function authGuard() {
+                const session = sessionStorage.getItem('luxe_auth');
+                if (!session) {
+                    window.location.href = '../luxe_concierge_secure_access/code.html';
+                    return;
+                }
+            })(); </script> <!--SideNavBar(Desktop Shell) -->
+    <aside
+        class="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 bg-surface-container-low border-r border-outline-variant z-50 p-6 space-y-4">
+        <div class="mb-base flex flex-col gap-2">
+            <span class="font-headline-md text-headline-md text-primary tracking-tight cursor-pointer"
+                onclick="window.location.href='../luxe_concierge_landing_page/code.html'"> LUXE CONCIERGE </span>
+            <div class="flex items-center gap-3 py-4 border-b border-outline-variant">
+                <div
+                    class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center border border-outline-variant">
+                    <span class="material-symbols-outlined"> person </span>
+                </div>
+                <div>
+                    <h3 class="font-label-md text-label-md uppercase text-on-surface" id="sidebar-username"> Guest </h3>
+                    <p class="text-xs text-on-surface-variant font-medium" id="sidebar-role"> Logged In </p>
+                </div>
+            </div>
+        </div>
+        <nav class="flex-grow space-y-2">
+            <a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-all"
+                href="../luxe_concierge_administrator_suite/code.html" id="nav-dashboard">
+                <span class="material-symbols-outlined"> dashboard </span> <span
+                    class="font-label-md text-label-md uppercase tracking-wider"> Dashboard </span> </a> <a
+                class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-all"
+                href="../luxe_concierge_room_status/code.html">
+                <span class="material-symbols-outlined"> bed </span> <span
+                    class="font-label-md text-label-md uppercase tracking-wider"> Room Status </span> </a> <a
+                class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-all"
+                href="../luxe_concierge_guest_logs/code.html">
+                <span class="material-symbols-outlined"> person_book </span> <span
+                    class="font-label-md text-label-md uppercase tracking-wider"> Guest Logs </span> </a> <a
+                class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-all"
+                href="../luxe_concierge_maintenance/code.html">
+                <span class="material-symbols-outlined"> engineering </span> <span
+                    class="font-label-md text-label-md uppercase tracking-wider"> Maintenance </span> </a> <a
+                class="flex items-center gap-3 px-4 py-3 bg-secondary-container text-on-secondary-container rounded-lg transition-all scale-95 duration-150"
+                href="#">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;"> flag </span> <span
+                    class="font-label-md text-label-md uppercase tracking-wider"> Reports </span> </a>
+        </nav> <button
+            class="mt-auto w-full py-3 bg-error text-on-error font-label-md uppercase tracking-widest rounded-lg hover:opacity-90 transition-all flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined"> lock_open </span>
+            Emergency Lockout
+        </button>
+        <div class="pt-4 border-t border-outline-variant space-y-2">
+            <a class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:text-primary transition-all"
+                href="#">
+                <span class="material-symbols-outlined text-[20px]"> help </span> <span class="text-sm font-medium">
+                    Help Center </span> </a> <a
+                class="flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:text-error transition-all cursor-pointer"
+                onclick="logOut()">
+                <span class="material-symbols-outlined text-[20px]"> logout </span> <span class="text-sm font-medium">
+                    Log Out </span> </a>
+        </div>
+    </aside> <!--Main Content Canvas-->
+    <main class="md:ml-64 min-h-screen flex flex-col">
+        <!--TopAppBar-->
+        <header class="w-full top-0 sticky z-40 bg-surface border-b border-outline-variant">
+            <div class="flex justify-between items-center px-6 md:px-margin-desktop py-4 max-w-[1440px] mx-auto">
+                <div class="flex items-center gap-8">
+                    <span class="md:hidden font-headline-md text-headline-md text-primary tracking-tight"> LUXE </span>
+                    <nav class="hidden lg:flex gap-6 items-center">
+                        <a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors pb-1"
+                            href="../luxe_concierge_guest_logs/code.html"> Guest Logs </a> <a
+                            class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors pb-1"
+                            href="../luxe_concierge_maintenance/code.html"> Maintenance </a> <a
+                            class="font-body-md text-body-md text-primary border-b-2 border-secondary font-bold pb-1"
+                            href="#"> Reports </a>
+                    </nav>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="flex items-center gap-2 border-l border-outline-variant pl-4">
+                        <button
+                            class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">
+                            notifications </button> <button
+                            class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">
+                            settings </button>
+                    </div>
+                </div>
+            </div>
+        </header> <!--Dashboard Body-->
+        <div class="p-6 md:p-margin-desktop max-w-[1440px] mx-auto w-full space-y-gutter">
+            <!--Page Header-->
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <div>
+                    <h1 class="font-headline-lg text-headline-lg text-primary mb-2"> Room Reports </h1>
+                    <p class="font-body-md text-on-surface-variant"> Submit and track room issue reports.Help us
+                        maintain our five - star standards. </p>
+                </div> <button
+                    class="flex items-center gap-2 px-6 py-3 bg-primary text-on-primary font-label-md uppercase tracking-wider rounded hover:opacity-90 transition-all"
+                    onclick="showNewReportForm()">
+                    <span class="material-symbols-outlined text-[20px]"> add_circle </span>
+                    New Report
+                </button>
+            </div>
+
+            <!--Summary Stats-->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+                <div
+                    class="bg-surface-container-lowest p-6 border border-outline-variant flex justify-between items-center rounded-lg">
+                    <div>
+                        <p class="font-label-md text-label-md uppercase text-on-surface-variant mb-1"> Total Reports
+                        </p>
+                        <h4 class="font-headline-lg text-headline-lg text-primary" id="stat-total"> 0 </h4>
+                    </div> <span class="material-symbols-outlined text-secondary text-4xl"> flag </span>
+                </div>
+                <div
+                    class="bg-surface-container-lowest p-6 border border-outline-variant flex justify-between items-center rounded-lg">
+                    <div>
+                        <p class="font-label-md text-label-md uppercase text-on-surface-variant mb-1"> Open Issues </p>
+                        <h4 class="font-headline-lg text-headline-lg text-error" id="stat-open"> 0 </h4>
+                    </div> <span class="material-symbols-outlined text-error text-4xl"> error_outline </span>
+                </div>
+                <div
+                    class="bg-surface-container-lowest p-6 border border-outline-variant flex justify-between items-center rounded-lg">
+                    <div>
+                        <p class="font-label-md text-label-md uppercase text-on-surface-variant mb-1"> In Review </p>
+                        <h4 class="font-headline-lg text-headline-lg text-secondary" id="stat-review"> 0 </h4>
+                    </div> <span class="material-symbols-outlined text-on-secondary-container text-4xl"> pending_actions
+                    </span>
+                </div>
+                <div
+                    class="bg-surface-container-lowest p-6 border border-outline-variant flex justify-between items-center rounded-lg">
+                    <div>
+                        <p class="font-label-md text-label-md uppercase text-on-surface-variant mb-1"> Resolved </p>
+                        <h4 class="font-headline-lg text-headline-lg text-primary" id="stat-resolved"> 0 </h4>
+                    </div> <span class="material-symbols-outlined text-secondary text-4xl"> check_circle </span>
+                </div>
+            </div>
+
+            <!--New Report Form(Hidden by
+        default) -->
+            <div class="hidden bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden fade-in"
+                id="new-report-form">
+                <div class="bg-primary-container p-6">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-2xl text-primary-fixed"> edit_note </span>
+                            <h2 class="font-headline-md text-headline-md text-primary-fixed"> Submit New Report </h2>
+                        </div> <button
+                            class="material-symbols-outlined text-primary-fixed-dim hover:text-primary-fixed transition-colors cursor-pointer"
+                            onclick="hideNewReportForm()"> close </button>
+                    </div>
+                </div>
+                <form class="p-6 space-y-6" onsubmit="submitReport(event)">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="font-label-md text-label-md uppercase text-on-surface-variant"> Room Number
+                            </label> <select
+                                class="w-full border border-outline-variant bg-surface-container-low rounded py-3 px-4 focus:border-secondary focus:ring-secondary text-on-surface"
+                                id="report-room" required>
+                                <option value=""> Select a room... </option>
+                                <option value="101"> 101— Penthouse </option>
+                                <option value="102"> 102— Royal Suite </option>
+                                <option value="118"> 118— Executive Suite </option>
+                                <option value="201"> 201— Deluxe King </option>
+                                <option value="202"> 202— Deluxe King </option>
+                                <option value="210"> 210— Standard Room </option>
+                                <option value="301"> 301— Junior Suite </option>
+                                <option value="304"> 304— Junior Suite </option>
+                                <option value="305"> 305— Standard Room </option>
+                                <option value="402"> 402— Deluxe Suite </option>
+                                <option value="405"> 405— Executive Room </option>
+                                <option value="410"> 410— Standard Room </option>
+                                <option value="501"> 501— Executive Loft </option>
+                                <option value="505"> 505— Penthouse Suite </option>
+                            </select>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="font-label-md text-label-md uppercase text-on-surface-variant"> Issue Category
+                            </label> <select
+                                class="w-full border border-outline-variant bg-surface-container-low rounded py-3 px-4 focus:border-secondary focus:ring-secondary text-on-surface"
+                                id="report-category" required>
+                                <option value=""> Select category... </option>
+                                <option value="Plumbing"> Plumbing </option>
+                                <option value="HVAC"> HVAC / Air Conditioning </option>
+                                <option value="Electrical"> Electrical </option>
+                                <option value="Furniture"> Furniture / Fixtures </option>
+                                <option value="Appliance"> Appliance </option>
+                                <option value="Cleanliness"> Cleanliness / Housekeeping </option>
+                                <option value="Noise"> Noise Disturbance </option>
+                                <option value="Security"> Security Concern </option>
+                                <option value="Amenities"> Missing Amenities </option>
+                                <option value="Other"> Other </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="font-label-md text-label-md uppercase text-on-surface-variant"> Severity Level
+                            </label>
+                            <div class="flex gap-2">
+                                <label class="flex-1 cursor-pointer">
+                                    <input type="radio" name="severity" value="critical" class="peer hidden" required />
+                                    <div
+                                        class="peer-checked:bg-error-container peer-checked:border-error peer-checked:text-on-error-container text-center py-3 border border-outline-variant rounded text-xs font-bold uppercase tracking-wider text-on-surface-variant hover:bg-surface-container-low transition-all">
+                                        Critical </div>
+                                </label> <label class="flex-1 cursor-pointer">
+                                    <input type="radio" name="severity" value="major" class="peer hidden" />
+                                    <div
+                                        class="peer-checked:bg-secondary-container peer-checked:border-secondary peer-checked:text-on-secondary-container text-center py-3 border border-outline-variant rounded text-xs font-bold uppercase tracking-wider text-on-surface-variant hover:bg-surface-container-low transition-all">
+                                        Major </div>
+                                </label> <label class="flex-1 cursor-pointer">
+                                    <input type="radio" name="severity" value="minor" class="peer hidden" checked />
+                                    <div
+                                        class="peer-checked:bg-surface-container-high peer-checked:border-surface-tint peer-checked:text-on-primary-container text-center py-3 border border-outline-variant rounded text-xs font-bold uppercase tracking-wider text-on-surface-variant hover:bg-surface-container-low transition-all">
+                                        Minor </div>
+                                </label> <label class="flex-1 cursor-pointer">
+                                    <input type="radio" name="severity" value="cosmetic" class="peer hidden" />
+                                    <div
+                                        class="peer-checked:bg-surface-container peer-checked:border-outline peer-checked:text-on-surface text-center py-3 border border-outline-variant rounded text-xs font-bold uppercase tracking-wider text-on-surface-variant hover:bg-surface-container-low transition-all">
+                                        Cosmetic </div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="font-label-md text-label-md uppercase text-on-surface-variant"> Urgency
+                            </label> <select
+                                class="w-full border border-outline-variant bg-surface-container-low rounded py-3 px-4 focus:border-secondary focus:ring-secondary text-on-surface"
+                                id="report-urgency">
+                                <option value="normal"> Normal— Address within 48 h </option>
+                                <option value="high"> High— Address within 24 h </option>
+                                <option value="immediate"> Immediate— ASAP response required </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="font-label-md text-label-md uppercase text-on-surface-variant"> Report Title
+                        </label> <input
+                            class="w-full border border-outline-variant bg-surface-container-low rounded py-3 px-4 focus:border-secondary focus:ring-secondary text-on-surface placeholder:text-outline"
+                            id="report-title" placeholder="Brief description of the issue" required type="text" />
+                    </div>
+                    <div class="space-y-2">
+                        <label class="font-label-md text-label-md uppercase text-on-surface-variant"> Detailed
+                            Description </label> <textarea
+                            class="w-full border border-outline-variant bg-surface-container-low rounded py-3 px-4 focus:border-secondary focus:ring-secondary text-on-surface placeholder:text-outline resize-none"
+                            id="report-description" rows="4"
+                            placeholder="Please describe the issue in detail. Include location within the room, when you first noticed it, and any other relevant information..."
+                            required> </textarea>
+                    </div>
+                    <div class="flex gap-4 pt-2">
+                        <button
+                            class="flex-1 py-3 bg-primary text-on-primary font-label-md uppercase tracking-widest rounded hover:opacity-90 transition-all flex items-center justify-center gap-2"
+                            type="submit">
+                            <span class="material-symbols-outlined text-[18px]"> send </span>
+                            Submit Report
+                        </button> <button
+                            class="py-3 px-8 border border-outline text-on-surface font-label-md uppercase tracking-widest rounded hover:bg-surface-container-low transition-all"
+                            type="button" onclick="hideNewReportForm()">
+                            Cancel </button>
+                    </div>
+                </form>
+            </div>
+
+            <!--Filter Controls-->
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <div class="flex gap-2">
+                    <select
+                        class="bg-surface-container-low border border-outline-variant rounded text-sm font-semibold text-on-surface px-4 py-2.5 focus:ring-secondary focus:border-secondary"
+                        id="filter-severity" onchange="renderReports()">
+                        <option value="all"> All Severities </option>
+                        <option value="critical"> Critical </option>
+                        <option value="major"> Major </option>
+                        <option value="minor"> Minor </option>
+                        <option value="cosmetic"> Cosmetic </option>
+                    </select> <select
+                        class="bg-surface-container-low border border-outline-variant rounded text-sm font-semibold text-on-surface px-4 py-2.5 focus:ring-secondary focus:border-secondary"
+                        id="filter-status" onchange="renderReports()">
+                        <option value="all"> All Statuses </option>
+                        <option value="open"> Open </option>
+                        <option value="in-review"> In Review </option>
+                        <option value="in-progress"> In Progress </option>
+                        <option value="resolved"> Resolved </option>
+                    </select>
+                </div>
+                <p class="text-sm text-on-surface-variant" id="report-count"> 0 reports found </p>
+            </div>
+
+            <!--Reports List-->
+            <div class="space-y-4" id="reports-container">
+                <!--Populated by JS-->
+            </div>
+        </div> <!--Footer-->
+        <footer class="w-full mt-auto bg-surface-container-highest border-t border-outline-variant">
+            <div
+                class="flex flex-col md:flex-row justify-between items-center px-6 md:px-margin-desktop py-8 max-w-[1440px] mx-auto gap-4">
+                <div class="flex flex-col md:items-start items-center">
+                    <span class="font-headline-md text-headline-md text-primary mb-2"> LUXE CONCIERGE </span>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant uppercase tracking-tighter"> ©2024 LUXE
+                        CONCIERGE HOSPITALITY GROUP.ALL RIGHTS RESERVED. </p>
+                </div>
+                <nav class="flex flex-wrap justify-center gap-6">
+                    <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary underline transition-all"
+                        href="#"> Privacy Policy </a> <a
+                        class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary underline transition-all"
+                        href="#"> Terms of Service </a> <a
+                        class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary underline transition-all"
+                        href="#"> Accessibility </a> <a
+                        class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary underline transition-all"
+                        href="#"> Contact Support </a>
+                </nav>
+            </div>
+        </footer>
+    </main> <!--Toast Container-->
+    <div class="fixed bottom-8 right-8 z-[60] flex flex-col gap-4" id="toast-container"> </div>
+    <script>
+        // Get current user
+        const session = JSON.parse(sessionStorage.getItem('luxe_auth') || '{}');
+        const isAdmin = session.role === 'admin';
+
+        // Update sidebar user info
+        (function updateSidebar() {
+            const username = session.username || 'Guest';
+            document.getElementById('sidebar-username').textContent = username.charAt(0).toUpperCase() + username.slice(1);
+            document.getElementById('sidebar-role').textContent = isAdmin ? 'Administrator' : 'Guest';
+            // Update dashboard link based on role
+            const dashLink = document.getElementById('nav-dashboard');
+            if (!isAdmin) {
+                dashLink.href = '../luxe_concierge_guest_dashboard/code.html';
+            }
+        })();
+
+        // Reports data (persisted in localStorage)
+        function getReports() {
+            const stored = localStorage.getItem('luxe_reports');
+            if (stored) return JSON.parse(stored);
+
+            // Default sample reports
+            const defaults = [{
+                id: 'RPT-001',
+                room: 402,
+                title: 'Shower water pressure extremely low',
+                description: 'The rain shower head in the master bathroom has very low water pressure since check-in. The handheld shower works fine but the ceiling mount barely trickles. Tried adjusting the valve but no improvement.',
+                category: 'Plumbing',
+                severity: 'major',
+                urgency: 'high',
+                status: 'in-progress',
+                reportedBy: 'Mr. Julian Thorne',
+                reportedDate: '2024-10-24T09:15:00',
+                lastUpdate: '2024-10-24T14:30:00',
+                adminNotes: 'Maintenance dispatched. Pressure regulator valve inspection scheduled for this afternoon.',
+                resolution: ''
+            }, {
+                id: 'RPT-002',
+                room: 505,
+                title: 'TV remote not working — batteries replaced already',
+                description: 'The Samsung TV remote control is completely unresponsive. I have replaced the batteries with the spare set from the drawer but still no response. The TV can be turned on manually but channels cannot be changed.',
+                category: 'Appliance',
+                severity: 'minor',
+                urgency: 'normal',
+                status: 'in-review',
+                reportedBy: 'François Beaumont',
+                reportedDate: '2024-10-23T18:45:00',
+                lastUpdate: '2024-10-24T08:00:00',
+                adminNotes: 'Reviewing — may be Bluetooth pairing issue. Similar to MNT-3001.',
+                resolution: ''
+            }, {
+                id: 'RPT-003',
+                room: 201,
+                title: 'Loud rattling noise from air conditioning unit',
+                description: 'Every time the AC cycles on, there is a loud rattling/buzzing noise coming from the unit above the bed. It is particularly disturbing during sleep. Started approximately 2 days ago and has gotten progressively worse.',
+                category: 'HVAC',
+                severity: 'critical',
+                urgency: 'immediate',
+                status: 'open',
+                reportedBy: 'Julianne Moore',
+                reportedDate: '2024-10-22T23:10:00',
+                lastUpdate: '2024-10-22T23:10:00',
+                adminNotes: '',
+                resolution: ''
+            }, {
+                id: 'RPT-004',
+                room: 301,
+                title: 'Desk chair wobbles — one leg appears shorter',
+                description: 'The office desk chair in the working area wobbles noticeably when seated. It appears one of the legs is slightly shorter or the floor leveler is missing. Not urgent but uncomfortable for extended work sessions.',
+                category: 'Furniture',
+                severity: 'cosmetic',
+                urgency: 'normal',
+                status: 'resolved',
+                reportedBy: 'Dr. Marcus Ashford',
+                reportedDate: '2024-10-20T11:30:00',
+                lastUpdate: '2024-10-21T09:00:00',
+                adminNotes: 'Chair inspected — floor leveling pad was missing. Replacement installed.',
+                resolution: 'Floor leveling pad replaced. Chair stability confirmed. Guest satisfied with fix.'
+            }, {
+                id: 'RPT-005',
+                room: 118,
+                title: 'Bathroom exhaust fan making grinding sound',
+                description: 'The exhaust fan in the guest bathroom makes a grinding/scraping noise when turned on. It seems to be coming from the motor. The fan still works but the noise is very unpleasant.',
+                category: 'HVAC',
+                severity: 'minor',
+                urgency: 'normal',
+                status: 'in-review',
+                reportedBy: 'Sir Reginald Blackmore',
+                reportedDate: '2024-10-22T07:20:00',
+                lastUpdate: '2024-10-23T10:00:00',
+                adminNotes: 'Motor bearing likely worn. Parts being checked in inventory.',
+                resolution: ''
+            }, {
+                id: 'RPT-006',
+                room: 101,
+                title: 'Stain on bedroom carpet near entrance',
+                description: 'There is a dark stain on the carpet near the bedroom entrance, approximately 15cm diameter. Appears to be a beverage stain. Was present at check-in.',
+                category: 'Cleanliness',
+                severity: 'cosmetic',
+                urgency: 'normal',
+                status: 'open',
+                reportedBy: 'Alexander Vane-Tempest',
+                reportedDate: '2024-10-20T15:00:00',
+                lastUpdate: '2024-10-20T15:00:00',
+                adminNotes: '',
+                resolution: ''
+            }, {
+                id: 'RPT-007',
+                room: 501,
+                title: 'Safe not locking properly — door does not catch',
+                description: 'The in-room safe door does not latch properly when closed. The electronic lock beeps as if it is locking but the door can be pulled open without entering a code. This is a security concern as I have valuables.',
+                category: 'Security',
+                severity: 'critical',
+                urgency: 'immediate',
+                status: 'in-progress',
+                reportedBy: 'Priya Chatterjee',
+                reportedDate: '2024-10-23T20:30:00',
+                lastUpdate: '2024-10-24T07:15:00',
+                adminNotes: 'Guest valuables moved to front desk safe. Portable safe unit delivered. Lock mechanism inspection by vendor scheduled Oct 25.',
+                resolution: ''
+            }, {
+                id: 'RPT-008',
+                room: 202,
+                title: 'Missing toiletry amenities — no shampoo or conditioner',
+                description: 'The bathroom was not stocked with shampoo, conditioner, or body lotion. Only soap bar was provided. Expected the full Le Labo amenity set as advertised.',
+                category: 'Amenities',
+                severity: 'minor',
+                urgency: 'normal',
+                status: 'resolved',
+                reportedBy: 'Chen Wei-Lin',
+                reportedDate: '2024-10-15T16:45:00',
+                lastUpdate: '2024-10-15T17:30:00',
+                adminNotes: 'Housekeeping oversight — room was recently turned over. Full amenity kit delivered within 30 minutes.',
+                resolution: 'Full Le Labo amenity set delivered and arranged. Complimentary spa voucher offered as gesture of apology.'
+            }];
+            localStorage.setItem('luxe_reports', JSON.stringify(defaults));
+            return defaults;
+        }
+
+        function saveReports(reports) {
+            localStorage.setItem('luxe_reports', JSON.stringify(reports));
+        }
+
+        function getSeverityBadge(severity) {
+            const map = {
+                'critical': {
+                    bg: 'bg-error-container',
+                    text: 'text-on-error-container'
+                },
+                'major': {
+                    bg: 'bg-secondary-container',
+                    text: 'text-on-secondary-container'
+                },
+                'minor': {
+                    bg: 'bg-surface-container-high',
+                    text: 'text-on-primary-container'
+                },
+                'cosmetic': {
+                    bg: 'bg-surface-container',
+                    text: 'text-on-surface-variant'
+                }
+            };
+            const s = map[severity];
+            return `<span class="px-3 py-1 ${s.bg} ${s.text} text-[11px] font-bold rounded-full uppercase">${severity}</span>`;
+        }
+
+        function getStatusBadge(status) {
+            const map = {
+                'open': {
+                    bg: 'bg-error-container',
+                    text: 'text-on-error-container',
+                    label: 'Open',
+                    icon: 'radio_button_unchecked'
+                },
+                'in-review': {
+                    bg: 'bg-secondary-container',
+                    text: 'text-on-secondary-container',
+                    label: 'In Review',
+                    icon: 'pending'
+                },
+                'in-progress': {
+                    bg: 'bg-surface-container-high',
+                    text: 'text-on-primary-container',
+                    label: 'In Progress',
+                    icon: 'autorenew'
+                },
+                'resolved': {
+                    bg: 'bg-surface-container',
+                    text: 'text-secondary',
+                    label: 'Resolved',
+                    icon: 'check_circle'
+                }
+            };
+            const s = map[status];
+            return `<div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px]">${s.icon}</span><span class="px-3 py-1 ${s.bg} ${s.text} text-[11px] font-bold rounded-full uppercase">${s.label}</span></div>`;
+        }
+
+        function formatDateTime(dateStr) {
+            const d = new Date(dateStr);
+            return d.toLocaleDateString('en-US', {
+                month: 'short',
+                day: 'numeric',
+                year: 'numeric'
+            }) +
+                ' at ' + d.toLocaleTimeString('en-US', {
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+        }
+
+        function getFilteredReports() {
+            const reports = getReports();
+            const sevFilter = document.getElementById('filter-severity').value;
+            const statusFilter = document.getElementById('filter-status').value;
+            return reports.filter(r => {
+                if (sevFilter !== 'all' && r.severity !== sevFilter) return false;
+                if (statusFilter !== 'all' && r.status !== statusFilter) return false;
+                return true;
+            });
+        }
+
+        function renderReports() {
+            const reports = getFilteredReports();
+            const allReports = getReports();
+            const container = document.getElementById('reports-container');
+
+            // Update stats
+            document.getElementById('stat-total').textContent = allReports.length;
+            document.getElementById('stat-open').textContent = allReports.filter(r => r.status === 'open').length;
+            document.getElementById('stat-review').textContent = allReports.filter(r => r.status === 'in-review' || r.status === 'in-progress').length;
+            document.getElementById('stat-resolved').textContent = allReports.filter(r => r.status === 'resolved').length;
+            document.getElementById('report-count').textContent = `${reports.length} report${reports.length !== 1 ? 's' : ''} found`;
+
+            if (reports.length === 0) {
+                container.innerHTML = `
+                <div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-12 text-center">
+                    <span class="material-symbols-outlined text-6xl text-outline-variant mb-4 block">search_off</span>
+                    <h3 class="font-headline-md text-headline-md text-primary mb-2">No Reports Found</h3>
+                    <p class="font-body-md text-on-surface-variant">No reports match your current filters. Try adjusting the filters or submit a new report.</p>
+                </div>`;
+                return;
+            }
+
+            // Sort by date, newest first
+            reports.sort((a, b) => new Date(b.reportedDate) - new Date(a.reportedDate));
+
+            container.innerHTML = reports.map(report => `
+        <div class="report-card bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden severity-${report.severity} fade-in">
+            <div class="p-6">
+                <div class="flex flex-col sm:flex-row justify-between items-start gap-4 mb-4">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="font-label-md text-label-md text-secondary">${report.id}</span>
+                            <span class="text-outline">·</span>
+                            <span class="font-label-md text-label-md text-on-surface-variant uppercase">Room ${report.room}</span>
+                            <span class="text-outline">·</span>
+                            <span class="font-label-md text-label-md text-on-surface-variant uppercase">${report.category}</span>
+                        </div>
+                        <h3 class="font-body-md font-bold text-on-surface text-lg mb-1">${report.title}</h3>
+                        <p class="text-sm text-on-surface-variant line-clamp-2">${report.description}</p>
+                    </div>
+                    <div class="flex flex-col items-end gap-2 shrink-0">
+                        ${getSeverityBadge(report.severity)}
+                        ${getStatusBadge(report.status)}
+                    </div>
+                </div>
+                <div class="flex flex-wrap items-center gap-4 pt-4 border-t border-outline-variant text-xs text-on-surface-variant">
+                    <div class="flex items-center gap-1.5">
+                        <span class="material-symbols-outlined text-[16px]">person</span>
+                        <span>${report.reportedBy}</span>
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                        <span class="material-symbols-outlined text-[16px]">schedule</span>
+                        <span>${formatDateTime(report.reportedDate)}</span>
+                    </div>
+                    ${report.urgency === 'immediate' ? '<span class="px-2 py-0.5 bg-error text-on-error text-[10px] font-bold rounded uppercase">⚡ Immediate</span>' : ''}
+                    ${report.urgency === 'high' ? '<span class="px-2 py-0.5 bg-secondary-container text-on-secondary-container text-[10px] font-bold rounded uppercase">High Priority</span>' : ''}
+                    <button class="ml-auto flex items-center gap-1.5 text-secondary font-bold uppercase hover:underline" onclick="toggleReportDetail('${report.id}')">
+                        <span>View Details</span>
+                        <span class="material-symbols-outlined text-[16px]" id="toggle-${report.id}">expand_more</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Expandable Detail -->
+            <div class="hidden border-t border-outline-variant bg-surface-container-low" id="detail-${report.id}">
+                <div class="p-6 space-y-4">
+                    <div>
+                        <p class="font-label-md text-label-md uppercase text-on-surface-variant mb-2">Full Description</p>
+                        <p class="text-sm text-on-surface leading-relaxed">${report.description}</p>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div>
+                            <p class="font-label-md text-label-md uppercase text-on-surface-variant mb-1">Reported</p>
+                            <p class="text-sm font-medium text-on-surface">${formatDateTime(report.reportedDate)}</p>
+                        </div>
+                        <div>
+                            <p class="font-label-md text-label-md uppercase text-on-surface-variant mb-1">Last Update</p>
+                            <p class="text-sm font-medium text-on-surface">${formatDateTime(report.lastUpdate)}</p>
+                        </div>
+                        <div>
+                            <p class="font-label-md text-label-md uppercase text-on-surface-variant mb-1">Urgency</p>
+                            <p class="text-sm font-medium text-on-surface capitalize">${report.urgency}</p>
+                        </div>
+                        <div>
+                            <p class="font-label-md text-label-md uppercase text-on-surface-variant mb-1">Room</p>
+                            <p class="text-sm font-medium text-on-surface">${report.room}</p>
+                        </div>
+                    </div>
+                    ${report.adminNotes ? `
+                            <div>
+                            <p class="font-label-md text-label-md uppercase text-on-surface-variant mb-2">Staff Response</p>
+                            <div class="bg-surface p-4 border border-outline-variant rounded flex items-start gap-3">
+                            <span class="material-symbols-outlined text-secondary text-[20px] mt-0.5">support_agent</span>
+                            <p class="text-sm text-on-surface leading-relaxed">${report.adminNotes}</p>
+                            </div>
+                            </div>` : ''}
+                    ${report.resolution ? `
+                            <div>
+                            <p class="font-label-md text-label-md uppercase text-on-surface-variant mb-2">Resolution</p>
+                            <div class="bg-surface p-4 border border-secondary/30 rounded flex items-start gap-3">
+                            <span class="material-symbols-outlined text-secondary text-[20px] mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            <p class="text-sm text-on-surface leading-relaxed">${report.resolution}</p>
+                            </div>
+                            </div>` : ''}
+                    ${isAdmin && report.status !== 'resolved' ? `
+                            <div class="flex gap-2 pt-2">
+                            <button class="flex-1 py-2.5 bg-primary text-on-primary text-[11px] font-bold uppercase tracking-widest rounded transition-all hover:opacity-90" onclick="updateReportStatus('${report.id}', 'resolved')">Mark Resolved</button>
+                            ${report.status === 'open' ? `<button class="flex-1 py-2.5 border border-secondary text-secondary text-[11px] font-bold uppercase tracking-widest rounded hover:bg-secondary-container transition-colors" onclick="updateReportStatus('${report.id}', 'in-review')">Start Review</button>` : ''}
+                            ${report.status === 'in-review' ? `<button class="flex-1 py-2.5 border border-secondary text-secondary text-[11px] font-bold uppercase tracking-widest rounded hover:bg-secondary-container transition-colors" onclick="updateReportStatus('${report.id}', 'in-progress')">Move to In Progress</button>` : ''}
+                            </div>` : ''}
+                </div>
+            </div>
+        </div>
+        `).join('');
+        }
+
+        function toggleReportDetail(id) {
+            const detail = document.getElementById(`detail-${id}`);
+            const toggle = document.getElementById(`toggle-${id}`);
+            if (detail.classList.contains('hidden')) {
+                detail.classList.remove('hidden');
+                toggle.textContent = 'expand_less';
+            } else {
+                detail.classList.add('hidden');
+                toggle.textContent = 'expand_more';
+            }
+        }
+
+        function updateReportStatus(id, newStatus) {
+            const reports = getReports();
+            const report = reports.find(r => r.id === id);
+            if (report) {
+                report.status = newStatus;
+                report.lastUpdate = new Date().toISOString();
+                if (newStatus === 'resolved') {
+                    report.resolution = report.resolution || 'Issue has been addressed and resolved by management.';
+                }
+                saveReports(reports);
+                renderReports();
+                showToast(`Report ${id} updated to "${newStatus}".`, 'success');
+            }
+        }
+
+        function showNewReportForm() {
+            document.getElementById('new-report-form').classList.remove('hidden');
+            document.getElementById('new-report-form').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        function hideNewReportForm() {
+            document.getElementById('new-report-form').classList.add('hidden');
+        }
+
+        function submitReport(e) {
+            e.preventDefault();
+            const reports = getReports();
+            const nextId = 'RPT-' + String(reports.length + 1).padStart(3, '0');
+
+            const newReport = {
+                id: nextId,
+                room: parseInt(document.getElementById('report-room').value),
+                title: document.getElementById('report-title').value,
+                description: document.getElementById('report-description').value,
+                category: document.getElementById('report-category').value,
+                severity: document.querySelector('input[name="severity"]:checked').value,
+                urgency: document.getElementById('report-urgency').value,
+                status: 'open',
+                reportedBy: session.username ? (session.username.charAt(0).toUpperCase() + session.username.slice(1)) : 'Guest',
+                reportedDate: new Date().toISOString(),
+                lastUpdate: new Date().toISOString(),
+                adminNotes: '',
+                resolution: ''
+            };
+
+            reports.push(newReport);
+            saveReports(reports);
+
+            // Reset form
+            e.target.reset();
+            hideNewReportForm();
+            renderReports();
+            showToast(`Report ${nextId} submitted successfully!`, 'success');
+        }
+
+        function showToast(message, type) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = `flex items-center gap-4 px-6 py-4 rounded shadow-xl border-l-4 transition-all duration-300 transform translate-y-10 opacity-0 ${type === 'success' ? 'bg-surface-container-low border-secondary' : 'bg-error-container border-error'}`;
+            toast.innerHTML = `
+            <span class="material-symbols-outlined">${type === 'success' ? 'check_circle' : 'warning'}</span>
+            <span class="text-sm font-bold uppercase tracking-wider">${message}</span>
+        `;
+            container.appendChild(toast);
+            setTimeout(() => toast.classList.remove('translate-y-10', 'opacity-0'), 100);
+            setTimeout(() => {
+                toast.classList.add('translate-y-10', 'opacity-0');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        function logOut() {
+            sessionStorage.removeItem('luxe_auth');
+            window.location.href = '../luxe_concierge_secure_access/code.html';
+        }
+
+        // Initialize
+        renderReports(); </script>
+</body>
+
+</html>

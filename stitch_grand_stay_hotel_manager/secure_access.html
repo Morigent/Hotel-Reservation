@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+
+<html class = "light"
+      lang = "en"> <head>
+    <meta charset = "utf-8"/>
+    <meta content = "width=device-width, initial-scale=1.0"
+          name = "viewport"/>
+    <script src = "https://cdn.tailwindcss.com?plugins=forms,container-queries"> </script> <link href = "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Libre+Caslon+Text:wght@400;700&amp;display=swap"
+                                                                                                 rel = "stylesheet"/>
+    <link href = "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+          rel = "stylesheet"/>
+    <link href = "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+          rel = "stylesheet"/>
+    <script id = "tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#d8e3fa",
+                        "surface-container-high": "#dee8ff",
+                        "surface": "#f9f9ff",
+                        "on-primary-fixed": "#0d1c32",
+                        "on-secondary-container": "#785a1a",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#111c2c",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#454748",
+                        "tertiary-fixed-dim": "#c5c7c8",
+                        "surface-tint": "#515f78",
+                        "on-secondary-fixed": "#261900",
+                        "surface-bright": "#f9f9ff",
+                        "tertiary-container": "#191c1d",
+                        "background": "#f9f9ff",
+                        "on-surface-variant": "#44474d",
+                        "on-primary-container": "#76849f",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#b9c7e4",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#000000",
+                        "surface-container": "#e7eeff",
+                        "surface-container-low": "#f0f3ff",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#ffdea5",
+                        "outline": "#75777e",
+                        "on-secondary-fixed-variant": "#5d4201",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#e9c176",
+                        "inverse-primary": "#b9c7e4",
+                        "primary": "#000000",
+                        "outline-variant": "#c5c6cd",
+                        "inverse-surface": "#263142",
+                        "on-tertiary-fixed": "#191c1d",
+                        "surface-dim": "#cfdaf1",
+                        "secondary": "#775a19",
+                        "secondary-container": "#fed488",
+                        "primary-container": "#0d1c32",
+                        "primary-fixed": "#d6e3ff",
+                        "on-primary-fixed-variant": "#39475f",
+                        "on-tertiary-container": "#828485",
+                        "inverse-on-surface": "#ebf1ff",
+                        "surface-container-highest": "#d8e3fa",
+                        "tertiary-fixed": "#e1e3e4",
+                        "on-background": "#111c2c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "md": "24px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "xs": "4px",
+                        "sm": "12px",
+                        "lg": "40px",
+                        "margin-desktop": "48px",
+                        "xl": "64px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-lg-mobile": ["Libre Caslon Text"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Libre Caslon Text"],
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Libre Caslon Text"],
+                        "label-md": ["Inter"],
+                        "headline-xl": ["Libre Caslon Text"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {
+                            "lineHeight": "24px",
+                            "fontWeight": "400"
+                        }],
+                        "body-sm": ["14px", {
+                            "lineHeight": "20px",
+                            "fontWeight": "400"
+                        }],
+                        "headline-lg-mobile": ["24px", {
+                            "lineHeight": "32px",
+                            "fontWeight": "400"
+                        }],
+                        "body-lg": ["18px", {
+                            "lineHeight": "28px",
+                            "fontWeight": "400"
+                        }],
+                        "headline-md": ["24px", {
+                            "lineHeight": "32px",
+                            "fontWeight": "400"
+                        }],
+                        "label-sm": ["11px", {
+                            "lineHeight": "14px",
+                            "fontWeight": "500"
+                        }],
+                        "headline-lg": ["32px", {
+                            "lineHeight": "40px",
+                            "fontWeight": "400"
+                        }],
+                        "label-md": ["12px", {
+                            "lineHeight": "16px",
+                            "letterSpacing": "0.05em",
+                            "fontWeight": "600"
+                        }],
+                        "headline-xl": ["48px", {
+                            "lineHeight": "56px",
+                            "letterSpacing": "-0.01em",
+                            "fontWeight": "400"
+                        }]
+                    }
+                },
+            },
+        } </script> <style>
+            .material-symbols-outlined {
+                font-variation-settings: 'FILL'
+                                         0, 'wght'
+                                         300, 'GRAD'
+                                         0, 'opsz'
+                                         24;
+            }
+            .auth-card {
+                box-shadow: 0px 4px 20px rgba(10, 25, 47, 0.05);
+                transition: all 0.3s ease-in-out;
+            }
+            .bg-pattern {
+                background-image: radial-gradient(#d8e3fa 0.5px, transparent 0.5px);
+                background-size: 24px 24px;
+            } </style> </head> <body class = "bg-background font-body-md text-on-surface overflow-x-hidden min-h-screen">
+                <main class = "flex min-h-screen">
+    <!--Brand / Aesthetic Column-->
+                    <div class = "hidden lg:flex lg:w-1/2 relative bg-primary-container items-center justify-center p-xl overflow-hidden">
+                        <div class = "absolute inset-0 z-0">
+                            <img alt = "Luxury Hotel Lobby"
+                                 class = "w-full h-full object-cover opacity-60 mix-blend-overlay"
+                                 data-alt = "A grand, hyper-realistic luxury hotel lobby during golden hour, featuring tall marble columns and expansive floor-to-ceiling windows. The interior is designed with a minimalist yet prestigious aesthetic, using a deep navy and charcoal palette with warm gold lighting accents. The atmosphere is serene, high-end, and professionally curated for a corporate five-star hospitality brand."
+                                 src = "https://lh3.googleusercontent.com/aida-public/AB6AXuB6L7gkTjGOH9KQYrQgDDmuqex-rjCPdqH012i03GynZhiiaBV1oBk8xFdBs8Xh_oUZf-S8-yIpJ54YBZfPB1-f_MvcOrL_9tXpdVIDZGLZXacGVqNJC3xNq9eEJ3Xi5EMBzReTujhhz4QHzVKPgJnJWnh_LWBwB2xel_qCfQgoToeebeJ63pVfEgcB4PIsgXbeCJtMmCfYeznA9cWV8IDFR_9qQelA2u3KsVck2v3vLL4tMmwyhz1ZN8PSLvFv0k-QiQNbFb1_0DQW"/>
+                        </div> <div class = "relative z-10 text-center max-w-lg">
+                            <h1 class = "font-headline-xl text-headline-xl text-primary-fixed mb-md"> LUXE CONCIERGE </h1> <p class = "font-body-lg text-body-lg text-primary-fixed-dim leading-relaxed">
+                                Excellence in hospitality management.Providing seamless operational control
+                                for the world 's most prestigious properties. </p> </div> <div class = "absolute bottom-10 left-10 flex items-center space-x-4">
+                                    <div class = "w-12 h-px bg-secondary"> </div> <span class = "font-label-md text-label-md text-secondary tracking-[0.2em] uppercase"> Imperial Suite Admin </span> </div> </div> <!--Auth Column-->
+                    <div class = "w-full lg:w-1/2 flex items-center justify-center p-margin-mobile md:p-margin-desktop bg-pattern">
+                        <div class = "w-full max-w-[440px]">
+    <!--Login Form Section-->
+                            <div class = "auth-card bg-surface-container-lowest border border-outline-variant p-lg rounded-lg"
+                                 id = "login-section">
+                                <div class = "mb-lg">
+                                    <h2 class = "font-headline-lg text-headline-lg text-primary mb-2"> Welcome Back </h2> <p class = "font-body-sm text-body-sm text-on-surface-variant"> Please enter your administrative credentials. </p> </div> <form class = "space-y-md"
+                                                                                                                                                                                                                                                      id = "login-form">
+                                    <div class = "space-y-1">
+                                        <label class = "font-label-md text-label-md text-on-surface-variant block"
+                                               for = "username"> USERNAME </label> <input class = "w-full bg-transparent border-0 border-b border-outline-variant focus:border-secondary focus:ring-0 py-3 font-body-md transition-all duration-200 outline-none"
+                                                                                   id = "username"
+                                                                                   name = "username"
+                                                                                   placeholder = "admin"
+                                                                                   required = ""
+                                                                                   type = "text"/>
+                                    </div> <div class = "space-y-1">
+                                        <label class = "font-label-md text-label-md text-on-surface-variant block"
+                                               for = "password"> PASSWORD </label> <div class = "relative">
+                                            <input class = "w-full bg-transparent border-0 border-b border-outline-variant focus:border-secondary focus:ring-0 py-3 font-body-md transition-all duration-200 outline-none"
+                                                   id = "password"
+                                                   name = "password"
+                                                   placeholder = "••••••••"
+                                                   required = ""
+                                                   type = "password"/>
+                                            <button class = "absolute right-0 top-3 text-on-surface-variant hover:text-primary"
+                                                    onclick = "togglePassword('password')"
+                                                    type = "button">
+                                                <span class = "material-symbols-outlined"
+                                                      data-icon = "visibility"> visibility </span> </button> </div> </div> <div class = "hidden text-error text-body-sm flex items-center gap-2 py-2"
+                                                                                                              id = "login-error">
+                                        <span class = "material-symbols-outlined text-[18px]"
+                                              data-icon = "error"> error </span> <span> Invalid credentials.Please
+                                            try again. </span> </div> <div class = "pt-base">
+                                                <button class = "w-full bg-primary-container text-primary-fixed font-label-md py-4 hover:bg-on-primary-fixed-variant transition-colors duration-300 flex items-center justify-center gap-2 group"
+                                                        type = "submit">
+                                                    SIGN IN <span class = "material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform"
+                                                                  data-icon = "arrow_forward"> arrow_forward </span> </button> </div> </form> <div class = "mt-xl text-center">
+                                                        <p class = "font-body-sm text-body-sm text-on-surface-variant">
+                                                            New staff member ?
+                                                            <button class = "text-secondary font-bold hover:underline"
+                                                                    onclick = "toggleAuth('register')"> Register Account </button> </p> </div> </div> <!--Registration Form Section-->
+                            <div class = "auth-card bg-surface-container-lowest border border-outline-variant p-lg rounded-lg hidden"
+                                 id = "register-section">
+                                <div class = "mb-lg">
+                                    <h2 class = "font-headline-lg text-headline-lg text-primary mb-2"> Create Account </h2> <p class = "font-body-sm text-body-sm text-on-surface-variant"> Join the LUXE CONCIERGE team today. </p> </div> <form class = "space-y-md"
+                                                                                                                                                                                                                                              id = "register-form">
+                                    <div class = "space-y-1">
+                                        <label class = "font-label-md text-label-md text-on-surface-variant block"
+                                               for = "reg-email"> EMAIL ADDRESS </label> <input class = "w-full bg-transparent border-0 border-b border-outline-variant focus:border-secondary focus:ring-0 py-3 font-body-md transition-all duration-200 outline-none"
+                                                                                         id = "reg-email"
+                                                                                         name = "email"
+                                                                                         placeholder = "hospitality@luxury.com"
+                                                                                         required = ""
+                                                                                         type = "email"/>
+                                    </div> <div class = "space-y-1">
+                                        <label class = "font-label-md text-label-md text-on-surface-variant block"
+                                               for = "reg-password"> CHOOSE PASSWORD </label> <div class = "relative">
+                                            <input class = "w-full bg-transparent border-0 border-b border-outline-variant focus:border-secondary focus:ring-0 py-3 font-body-md transition-all duration-200 outline-none"
+                                                   id = "reg-password"
+                                                   name = "password"
+                                                   oninput = "validatePassword()"
+                                                   placeholder = "••••••••"
+                                                   required = ""
+                                                   type = "password"/>
+                                            <button class = "absolute right-0 top-3 text-on-surface-variant hover:text-primary"
+                                                    onclick = "togglePassword('reg-password')"
+                                                    type = "button">
+                                                <span class = "material-symbols-outlined"
+                                                      data-icon = "visibility"> visibility </span> </button> </div> <div class = "mt-2 p-3 bg-surface-container-low rounded border border-outline-variant/30 transition-all duration-200 opacity-60"
+                                                                                                           id = "pass-validation">
+                                            <p class = "font-label-sm text-label-sm flex items-center gap-2 mb-1"
+                                               id = "rule-length">
+                                                <span class = "material-symbols-outlined text-[14px]"
+                                                      data-icon = "circle"> circle </span> At least 8 characters </p> <p class = "font-label-sm text-label-sm flex items-center gap-2"
+                                                                                                               id = "rule-number">
+                                                <span class = "material-symbols-outlined text-[14px]"
+                                                      data-icon = "circle"> circle </span> Contains a number </p> </div> </div> <div class = "pt-base">
+                                                    <button class = "w-full bg-primary-container text-primary-fixed font-label-md py-4 opacity-50 cursor-not-allowed transition-all duration-300 flex items-center justify-center gap-2"
+                                                            disabled = ""
+                                                            id = "reg-submit"
+                                                            type = "submit">
+                                                        COMPLETE REGISTRATION </button> </div> </form> <div class = "mt-xl text-center">
+                                                            <p class = "font-body-sm text-body-sm text-on-surface-variant">
+                                                                Already have access ?
+                                                                <button class = "text-secondary font-bold hover:underline"
+                                                                        onclick = "toggleAuth('login')"> Log In </button> </p> </div> </div> <!--Success State(Toast - like) -->
+                            <div class = "hidden mt-md p-md bg-secondary-container text-on-secondary-container border border-secondary/20 rounded-lg flex items-center gap-md"
+                                 id = "success-message">
+                                <span class = "material-symbols-outlined"
+                                      data-icon = "verified_user"> verified_user </span> <p class = "font-body-sm"> Action completed successfully.Accessing dashboard... </p> </div> <footer class = "mt-xl text-center">
+                                    <p class = "font-label-sm text-label-sm text-on-surface-variant opacity-60 tracking-widest uppercase"> ©2024 LUXE CONCIERGE HOSPITALITY GROUP </p> </footer> </div> </div> </main> <script>
+    // Initialize registered users storage
+                                        if (!localStorage.getItem('luxe_users')) {
+                                            localStorage.setItem('luxe_users', JSON.stringify([{
+                                                username: 'admin',
+                                                password: 'admin',
+                                                role: 'admin',
+                                                email: 'admin@luxeconcierge.com'
+                                            }]));
+                                        }
+
+// If already logged in, redirect
+                                        (function checkExistingSession() {
+                                            const session = sessionStorage.getItem('luxe_auth');
+                                            if (session) {
+                                                const user = JSON.parse(session);
+                                                if (user.role === 'admin') {
+                                                    window.location.href = 'Admin.html';
+                                                } else {
+                                                    window.location.href = 'guest_dashboard.html';
+                                                }
+                                            }
+                                        })();
+
+                                        function toggleAuth(view) {
+                                            const loginSection = document.getElementById('login-section');
+                                            const registerSection = document.getElementById('register-section');
+                                            const errorMsg = document.getElementById('login-error');
+
+                                            errorMsg.classList.add('hidden');
+
+                                            if (view === 'register') {
+                                                loginSection.classList.add('hidden');
+                                                registerSection.classList.remove('hidden');
+                                            } else {
+                                                registerSection.classList.add('hidden');
+                                                loginSection.classList.remove('hidden');
+                                            }
+                                        }
+
+                                        function togglePassword(id) {
+                                            const input = document.getElementById(id);
+                                            const icon = input.nextElementSibling.querySelector('.material-symbols-outlined');
+                                            if (input.type === 'password') {
+                                                input.type = 'text';
+                                                icon.textContent = 'visibility_off';
+                                            } else {
+                                                input.type = 'password';
+                                                icon.textContent = 'visibility';
+                                            }
+                                        }
+
+                                        function validatePassword() {
+                                            const pass = document.getElementById('reg-password').value;
+                                            const lengthRule = document.getElementById('rule-length');
+                                            const numberRule = document.getElementById('rule-number');
+                                            const submitBtn = document.getElementById('reg-submit');
+                                            const validationBox = document.getElementById('pass-validation');
+
+                                            const hasMinLength = pass.length>= 8;
+                                            const hasNumber = /\d/.test(pass);
+
+    // Style Length Rule
+                                            if (hasMinLength) {
+                                                lengthRule.classList.add('text-secondary');
+                                                lengthRule.querySelector('.material-symbols-outlined').textContent = 'check_circle';
+                                                lengthRule.querySelector('.material-symbols-outlined').style.fontVariationSettings = "'FILL' 1";
+                                            } else {
+                                                lengthRule.classList.remove('text-secondary');
+                                                lengthRule.querySelector('.material-symbols-outlined').textContent = 'circle';
+                                                lengthRule.querySelector('.material-symbols-outlined').style.fontVariationSettings = "'FILL' 0";
+                                            }
+
+    // Style Number Rule
+                                            if (hasNumber) {
+                                                numberRule.classList.add('text-secondary');
+                                                numberRule.querySelector('.material-symbols-outlined').textContent = 'check_circle';
+                                                numberRule.querySelector('.material-symbols-outlined').style.fontVariationSettings = "'FILL' 1";
+                                            } else {
+                                                numberRule.classList.remove('text-secondary');
+                                                numberRule.querySelector('.material-symbols-outlined').textContent = 'circle';
+                                                numberRule.querySelector('.material-symbols-outlined').style.fontVariationSettings = "'FILL' 0";
+                                            }
+
+                                            if (hasMinLength && hasNumber) {
+                                                submitBtn.disabled = false;
+                                                submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                                                validationBox.classList.remove('opacity-60');
+                                                validationBox.classList.add('border-secondary');
+                                            } else {
+                                                submitBtn.disabled = true;
+                                                submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                                                validationBox.classList.add('opacity-60');
+                                                validationBox.classList.remove('border-secondary');
+                                            }
+                                        }
+
+                                        document.getElementById('login-form').addEventListener('submit', function(e) {
+                                            e.preventDefault();
+                                            const user = document.getElementById('username').value.trim();
+                                            const pass = document.getElementById('password').value;
+                                            const errorMsg = document.getElementById('login-error');
+                                            const successMsg = document.getElementById('success-message');
+
+    // Check against stored users
+                                            const users = JSON.parse(localStorage.getItem('luxe_users') || '[]');
+                                            const foundUser = users.find(u => u.username === user && u.password === pass);
+
+                                            if (foundUser) {
+                                                errorMsg.classList.add('hidden');
+                                                successMsg.classList.remove('hidden');
+
+        // Store auth session
+                                                sessionStorage.setItem('luxe_auth', JSON.stringify({
+                                                    username: foundUser.username,
+                                                    role: foundUser.role,
+                                                    email: foundUser.email,
+                                                    loginTime: new Date().toISOString()
+                                                }));
+
+                                                if (foundUser.role === 'admin') {
+                                                    successMsg.querySelector('p').textContent = 'Admin authenticated. Redirecting to Administrator Suite...';
+                                                    setTimeout(() => {
+                                                        window.location.href = 'Admin.html';
+                                                    }, 1200);
+                                                } else {
+                                                    successMsg.querySelector('p').textContent = 'Welcome back! Redirecting to your dashboard...';
+                                                    setTimeout(() => {
+                                                        window.location.href = 'guest_dashboard.html';
+                                                    }, 1200);
+                                                }
+                                            } else {
+                                                errorMsg.classList.remove('hidden');
+                                                successMsg.classList.add('hidden');
+                                            }
+                                        });
+
+                                        document.getElementById('register-form').addEventListener('submit', function(e) {
+                                            e.preventDefault();
+                                            const email = document.getElementById('reg-email').value.trim();
+                                            const password = document.getElementById('reg-password').value;
+                                            const successMsg = document.getElementById('success-message');
+                                            const errorMsg = document.getElementById('login-error');
+
+    // Generate username from email
+                                            const username = email.split('@')[0];
+
+    // Check if user already exists
+                                            const users = JSON.parse(localStorage.getItem('luxe_users') || '[]');
+                                            if (users.find(u => u.email === email || u.username === username)) {
+                                                errorMsg.querySelector('span:last-child').textContent = 'An account with this email already exists.';
+                                                errorMsg.classList.remove('hidden');
+                                                return;
+                                            }
+
+    // Register new user as guest
+                                            const newUser = {
+                                                username: username,
+                                                password: password,
+                                                role: 'guest',
+                                                email: email
+                                            };
+                                            users.push(newUser);
+                                            localStorage.setItem('luxe_users', JSON.stringify(users));
+
+    // Auto-login after registration
+                                            sessionStorage.setItem('luxe_auth', JSON.stringify({
+                                                username: newUser.username,
+                                                role: newUser.role,
+                                                email: newUser.email,
+                                                loginTime: new Date().toISOString()
+                                            }));
+
+                                            successMsg.querySelector('p').textContent = 'Registration successful! Redirecting to your dashboard...';
+                                            successMsg.classList.remove('hidden');
+                                            errorMsg.classList.add('hidden');
+
+                                            setTimeout(() => {
+                                                window.location.href = 'guest_dashboard.html';
+                                            }, 1200);
+                                        }); </script> </body></html>
