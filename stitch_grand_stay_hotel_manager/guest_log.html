@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+
+<html class = "light"
+      lang = "en"> <head>
+    <meta charset = "utf-8"/>
+    <meta content = "width=device-width, initial-scale=1.0"
+          name = "viewport"/>
+    <title> Luxe Concierge | Guest Logs </title> <link href = "https://fonts.googleapis.com"
+                                                       rel = "preconnect"/>
+    <link crossorigin = ""
+          href = "https://fonts.gstatic.com"
+          rel = "preconnect"/>
+    <link href = "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;display=swap"
+          rel = "stylesheet"/>
+    <link href = "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+          rel = "stylesheet"/>
+    <script src = "https://cdn.tailwindcss.com?plugins=forms,container-queries"> </script> <script id = "tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#d8e3fa",
+                        "surface-container-high": "#dee8ff",
+                        "surface": "#f9f9ff",
+                        "on-primary-fixed": "#0d1c32",
+                        "on-secondary-container": "#785a1a",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#111c2c",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#454748",
+                        "tertiary-fixed-dim": "#c5c7c8",
+                        "surface-tint": "#515f78",
+                        "on-secondary-fixed": "#261900",
+                        "surface-bright": "#f9f9ff",
+                        "tertiary-container": "#191c1d",
+                        "background": "#f9f9ff",
+                        "on-surface-variant": "#44474d",
+                        "on-primary-container": "#76849f",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#b9c7e4",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#000000",
+                        "surface-container": "#e7eeff",
+                        "surface-container-low": "#f0f3ff",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#ffdea5",
+                        "outline": "#75777e",
+                        "on-secondary-fixed-variant": "#5d4201",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#e9c176",
+                        "inverse-primary": "#b9c7e4",
+                        "primary": "#000000",
+                        "outline-variant": "#c5c6cd",
+                        "inverse-surface": "#263142",
+                        "on-tertiary-fixed": "#191c1d",
+                        "surface-dim": "#cfdaf1",
+                        "secondary": "#775a19",
+                        "secondary-container": "#fed488",
+                        "primary-container": "#0d1c32",
+                        "primary-fixed": "#d6e3ff",
+                        "on-primary-fixed-variant": "#39475f",
+                        "on-tertiary-container": "#828485",
+                        "inverse-on-surface": "#ebf1ff",
+                        "surface-container-highest": "#d8e3fa",
+                        "tertiary-fixed": "#e1e3e4",
+                        "on-background": "#111c2c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "md": "24px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "xs": "4px",
+                        "sm": "12px",
+                        "lg": "40px",
+                        "margin-desktop": "48px",
+                        "xl": "64px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-lg-mobile": ["Libre Caslon Text"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Libre Caslon Text"],
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Libre Caslon Text"],
+                        "label-md": ["Inter"],
+                        "headline-xl": ["Libre Caslon Text"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {
+                            "lineHeight": "24px",
+                            "fontWeight": "400"
+                        }],
+                        "body-sm": ["14px", {
+                            "lineHeight": "20px",
+                            "fontWeight": "400"
+                        }],
+                        "headline-lg-mobile": ["24px", {
+                            "lineHeight": "32px",
+                            "fontWeight": "400"
+                        }],
+                        "body-lg": ["18px", {
+                            "lineHeight": "28px",
+                            "fontWeight": "400"
+                        }],
+                        "headline-md": ["24px", {
+                            "lineHeight": "32px",
+                            "fontWeight": "400"
+                        }],
+                        "label-sm": ["11px", {
+                            "lineHeight": "14px",
+                            "fontWeight": "500"
+                        }],
+                        "headline-lg": ["32px", {
+                            "lineHeight": "40px",
+                            "fontWeight": "400"
+                        }],
+                        "label-md": ["12px", {
+                            "lineHeight": "16px",
+                            "letterSpacing": "0.05em",
+                            "fontWeight": "600"
+                        }],
+                        "headline-xl": ["48px", {
+                            "lineHeight": "56px",
+                            "letterSpacing": "-0.01em",
+                            "fontWeight": "400"
+                        }]
+                    }
+                },
+            },
+        } </script> <style>
+            .material-symbols-outlined {
+                font-variation-settings: 'FILL'
+                                         0, 'wght'
+                                         400, 'GRAD'
+                                         0, 'opsz'
+                                         24;
+                display: inline-block;
+                vertical-align: middle;
+            }::-webkit-scrollbar {
+                width: 6px;
+            }::-webkit-scrollbar-track {
+                background: transparent;
+            }::-webkit-scrollbar-thumb {
+                background: #c5c6cd;border-radius: 10px;
+            }
+            .sort-btn.active {
+                background-color: #0d1c32;
+                color: # ffffff;
+            }
+            .fade-in {
+                animation: fadeIn 0.3s ease-in-out;
+            }
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;transform: translateY(8px);
+                }
+                to {
+                    opacity: 1;transform: translateY(0);
+                }
+            } </style> </head> <body class = "bg-background text-on-background font-body-md overflow-x-hidden">
+                <script>
+    // Auth Guard: Only admin can access this page
+                    (function authGuard() {
+                        const session = sessionStorage.getItem('luxe_auth');
+                        if (!session) {
+                            window.location.href = 'secure_access.html';
+                            return;
+                        }
+                        const user = JSON.parse(session);
+                        if (user.role !== 'admin') {
+                            window.location.href = 'guest_dashboard.html';
+                            return;
+                        }
+                    })(); </script> <!--SideNavBar(Desktop Shell) -->
+                <aside class = "hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 bg-surface-container-low border-r border-outline-variant z-50 p-6 space-y-4">
+                    <div class = "mb-base flex flex-col gap-2">
+                        <span class = "font-headline-md text-headline-md text-primary tracking-tight cursor-pointer"
+                              onclick = "window.location.href='landing_page.html'"> LUXE CONCIERGE </span> <div class = "flex items-center gap-3 py-4 border-b border-outline-variant">
+                            <img alt = "Concierge Lead"
+                                 class = "w-10 h-10 rounded-full object-cover border border-outline-variant"
+                                 src = "https://lh3.googleusercontent.com/aida-public/AB6AXuDvIhMobuDDTfymz4ud54N7ngDfdJ0EBiNz94C1qvB-szKHH-CI3Rgrf9Ac9GCExOprPksZqtCqwi_sLBaMCYGuGT_85U3g2df6j2pu7QqaTInVKDpwQT4_wd-vMg5mk0wWJfV9R6JdaQ-POcO-7vjQexS5fgjQjSIpB0ip17CMNG_kUZiOJk64yD5cRmK9Lc5D-2ncyB0Qdd9c4wFhXT311MRTvTGX--E4TAqDRkXobIRC775nRb86nJ7_kefljJwxJ18cn9wTILr_"/>
+                            <div>
+                                <h3 class = "font-label-md text-label-md uppercase text-on-surface"> Imperial Suite Admin </h3> <p class = "text-xs text-on-surface-variant font-medium"> Senior Staff </p> </div> </div> </div> <nav class = "flex-grow space-y-2">
+                                    <a class = "flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-all"
+                                       href = "room_status.html">
+                                        <span class = "material-symbols-outlined"> bed </span> <span class = "font-label-md text-label-md uppercase tracking-wider"> Room Status </span> </a> <a class = "flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-all"
+                                                                                                                                                                                             href = "Admin.html">
+                                        <span class = "material-symbols-outlined"> dashboard </span> <span class = "font-label-md text-label-md uppercase tracking-wider"> Dashboard </span> </a> <a class = "flex items-center gap-3 px-4 py-3 bg-secondary-container text-on-secondary-container rounded-lg transition-all scale-95 duration-150"
+                                                                                                                                                                                                 href = "#">
+                                        <span class = "material-symbols-outlined"
+                                              style = "font-variation-settings: 'FILL' 1;"> person_book </span> <span class = "font-label-md text-label-md uppercase tracking-wider"> Guest Logs </span> </a> <a class = "flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-all"
+                                                                                                                                                                                                       href = "maintenance.html">
+                                        <span class = "material-symbols-outlined"> engineering </span> <span class = "font-label-md text-label-md uppercase tracking-wider"> Maintenance </span> </a> <a class = "flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-all"
+                                                                                                                                                                                                     href = "reports.html">
+                                        <span class = "material-symbols-outlined"> flag </span> <span class = "font-label-md text-label-md uppercase tracking-wider"> Reports </span> </a> </nav> <button class = "mt-auto w-full py-3 bg-error text-on-error font-label-md uppercase tracking-widest rounded-lg hover:opacity-90 transition-all flex items-center justify-center gap-2">
+                                            <span class = "material-symbols-outlined"> lock_open </span>
+                                            Emergency Lockout
+                                        </button> <div class = "pt-4 border-t border-outline-variant space-y-2">
+                                            <a class = "flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:text-primary transition-all"
+                                               href = "#">
+                                                <span class = "material-symbols-outlined text-[20px]"> help </span> <span class = "text-sm font-medium"> Help Center </span> </a> <a class = "flex items-center gap-3 px-4 py-2 text-on-surface-variant hover:text-error transition-all cursor-pointer"
+                                                                                                                                                                                 onclick = "logOut()">
+                                                <span class = "material-symbols-outlined text-[20px]"> logout </span> <span class = "text-sm font-medium"> Log Out </span> </a> </div> </aside> <!--Main Content Canvas-->
+                <main class = "md:ml-64 min-h-screen flex flex-col">
+    <!--TopAppBar-->
+                    <header class = "w-full top-0 sticky z-40 bg-surface border-b border-outline-variant">
+                        <div class = "flex justify-between items-center px-6 md:px-margin-desktop py-4 max-w-[1440px] mx-auto">
+                            <div class = "flex items-center gap-8">
+                                <span class = "md:hidden font-headline-md text-headline-md text-primary tracking-tight"> LUXE </span> <nav class = "hidden lg:flex gap-6 items-center">
+                                    <a class = "font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors pb-1"
+                                       href = "Admin.html"> Reservations </a> <a class = "font-body-md text-body-md text-primary border-b-2 border-secondary font-bold pb-1"
+                                                                                                                   href = "#"> Guest Logs </a> <a class = "font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors pb-1"
+                                                                   href = "maintenance.html"> Maintenance </a> <a class = "font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors pb-1"
+                                                                                                          href = "reports.html"> Reports </a> </nav> </div> <div class = "flex items-center gap-4">
+                                        <div class = "hidden sm:flex items-center bg-surface-container-low px-4 py-2 rounded-full border border-outline-variant">
+                                            <span class = "material-symbols-outlined text-outline"> search </span> <input class = "bg-transparent border-none focus:ring-0 text-sm w-48 ml-2"
+                                                                                                                          placeholder = "Search guests..."
+                                                                                                                          type = "text"
+                                                                                                                          id = "search-input"
+                                                                                                                          oninput = "filterLogs()"/>
+                                        </div> <div class = "flex items-center gap-2 border-l border-outline-variant pl-4">
+                                            <button class = "material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors"> notifications </button> <button class = "material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors"> settings </button> </div> </div> </div> </header> <!--Dashboard Body-->
+                    <div class = "p-6 md:p-margin-desktop max-w-[1440px] mx-auto w-full space-y-gutter">
+    <!--Page Header-->
+                        <div class = "flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                            <div>
+                                <h1 class = "font-headline-lg text-headline-lg text-primary mb-2"> Guest Logs </h1> <p class = "font-body-md text-on-surface-variant"> Complete guest activity history
+                                    for the Imperial Wing. </p> </div> <div class = "flex gap-2">
+                                        <button class = "sort-btn active flex items-center gap-2 px-5 py-2.5 border border-outline-variant text-sm font-semibold rounded transition-all"
+                                                onclick = "sortBy('date')"
+                                                id = "sort-date">
+                                            <span class = "material-symbols-outlined text-[18px]"> calendar_today </span>
+                                            Sort by Date
+                                        </button> <button class = "sort-btn flex items-center gap-2 px-5 py-2.5 border border-outline-variant text-sm font-semibold text-on-surface hover:bg-surface-container-low rounded transition-all"
+                                                          onclick = "sortBy('room')"
+                                                          id = "sort-room">
+                                            <span class = "material-symbols-outlined text-[18px]"> meeting_room </span>
+                                            Sort by Room
+                                        </button> </div> </div> <!--Summary Stats-->
+                        <div class = "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+                            <div class = "bg-surface-container-lowest p-6 border border-outline-variant flex justify-between items-center rounded-lg">
+                                <div>
+                                    <p class = "font-label-md text-label-md uppercase text-on-surface-variant mb-1"> Total Guests </p> <h4 class = "font-headline-lg text-headline-lg text-primary"> 847 </h4> </div> <span class = "material-symbols-outlined text-secondary text-4xl"> groups </span> </div> <div class = "bg-surface-container-lowest p-6 border border-outline-variant flex justify-between items-center rounded-lg">
+                                        <div>
+                                            <p class = "font-label-md text-label-md uppercase text-on-surface-variant mb-1"> Active Stays </p> <h4 class = "font-headline-lg text-headline-lg text-primary"> 38 </h4> </div> <span class = "material-symbols-outlined text-on-primary-container text-4xl"> hotel </span> </div> <div class = "bg-surface-container-lowest p-6 border border-outline-variant flex justify-between items-center rounded-lg">
+                                                <div>
+                                                    <p class = "font-label-md text-label-md uppercase text-on-surface-variant mb-1"> Check - ins Today </p> <h4 class = "font-headline-lg text-headline-lg text-primary"> 12 </h4> </div> <span class = "material-symbols-outlined text-on-secondary-container text-4xl"> flight_land </span> </div> <div class = "bg-surface-container-lowest p-6 border border-outline-variant flex justify-between items-center rounded-lg">
+                                                        <div>
+                                                            <p class = "font-label-md text-label-md uppercase text-on-surface-variant mb-1"> Check - outs Today </p> <h4 class = "font-headline-lg text-headline-lg text-primary"> 8 </h4> </div> <span class = "material-symbols-outlined text-error text-4xl"> flight_takeoff </span> </div> </div>
+
+    <!--Guest Logs Table-->
+                        <div class = "bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden">
+                            <div class = "px-6 py-5 border-b border-outline-variant flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                                <div>
+                                    <h2 class = "font-headline-md text-headline-md text-primary"> Activity Register </h2> <p class = "text-sm text-on-surface-variant"> Detailed check - in / check - out records
+                                        for all guests. </p> </div> <div class = "flex gap-2">
+                                            <select class = "bg-surface-container-low border border-outline-variant rounded text-sm font-semibold text-on-surface px-4 py-2 focus:ring-secondary focus:border-secondary"
+                                                    id = "filter-status"
+                                                    onchange = "filterLogs()">
+                                                <option value = "all"> All Statuses </option> <option value = "checked-in"> Checked In </option> <option value = "checked-out"> Checked Out </option> <option value = "reserved"> Reserved </option> <option value = "cancelled"> Cancelled </option> </select> <select class = "bg-surface-container-low border border-outline-variant rounded text-sm font-semibold text-on-surface px-4 py-2 focus:ring-secondary focus:border-secondary"
+                                                                                                                                                                                                                                                                                                                    id = "filter-floor"
+                                                                                                                                                                                                                                                                                                                    onchange = "filterLogs()">
+                                                <option value = "all"> All Floors </option> <option value = "1"> Floor 1 </option> <option value = "2"> Floor 2 </option> <option value = "3"> Floor 3 </option> <option value = "4"> Floor 4 </option> <option value = "5"> Floor 5 </option> </select> </div> </div> <div class = "overflow-x-auto">
+                                                    <table class = "w-full border-collapse">
+                                                        <thead>
+                                                            <tr class = "bg-surface-container-low text-left border-b border-outline-variant">
+                                                                <th class = "px-6 py-4 font-label-md text-label-md uppercase text-on-surface-variant cursor-pointer hover:text-primary transition-colors"
+                                                                    onclick = "sortBy('room')">
+                                                                    Room <span class = "material-symbols-outlined text-[14px] align-middle"
+                                                                               id = "sort-icon-room"> </span> </th> <th class = "px-6 py-4 font-label-md text-label-md uppercase text-on-surface-variant"> Guest Name </th> <th class = "px-6 py-4 font-label-md text-label-md uppercase text-on-surface-variant cursor-pointer hover:text-primary transition-colors"
+                                                                                                                                                                                                                 onclick = "sortBy('date')">
+                                                                    Check - In <span class = "material-symbols-outlined text-[14px] align-middle"
+                                                                                     id = "sort-icon-date"> </span> </th> <th class = "px-6 py-4 font-label-md text-label-md uppercase text-on-surface-variant"> Check - Out </th> <th class = "px-6 py-4 font-label-md text-label-md uppercase text-on-surface-variant"> Nights </th> <th class = "px-6 py-4 font-label-md text-label-md uppercase text-on-surface-variant"> Status </th> <th class = "px-6 py-4 font-label-md text-label-md uppercase text-on-surface-variant"> Category </th> </tr> </thead> <tbody class = "divide-y divide-outline-variant"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          id = "guest-log-body">
+    <!--Rows populated by JS-->
+                                                        </tbody> </table> </div> <!--Pagination-->
+                            <div class = "px-6 py-4 border-t border-outline-variant flex justify-between items-center">
+                                <p class = "text-sm text-on-surface-variant"
+                                   id = "pagination-info"> Showing 1– 10 of 18 entries </p> <div class = "flex gap-2">
+                                    <button class = "px-4 py-2 border border-outline-variant text-sm font-semibold rounded hover:bg-surface-container-low transition-colors disabled:opacity-40"
+                                            id = "prev-btn"
+                                            onclick = "changePage(-1)"
+                                            disabled> Previous </button> <button class = "px-4 py-2 bg-primary text-on-primary text-sm font-semibold rounded hover:opacity-90 transition-colors"
+                                                                         id = "next-btn"
+                                                                         onclick = "changePage(1)"> Next </button> </div> </div> </div> </div> <!--Footer-->
+                    <footer class = "w-full mt-auto bg-surface-container-highest border-t border-outline-variant">
+                        <div class = "flex flex-col md:flex-row justify-between items-center px-6 md:px-margin-desktop py-8 max-w-[1440px] mx-auto gap-4">
+                            <div class = "flex flex-col md:items-start items-center">
+                                <span class = "font-headline-md text-headline-md text-primary mb-2"> LUXE CONCIERGE </span> <p class = "font-body-sm text-body-sm text-on-surface-variant uppercase tracking-tighter"> ©2024 LUXE CONCIERGE HOSPITALITY GROUP.ALL RIGHTS RESERVED. </p> </div> <nav class = "flex flex-wrap justify-center gap-6">
+                                    <a class = "font-body-sm text-body-sm text-on-surface-variant hover:text-primary underline transition-all"
+                                       href = "#"> Privacy Policy </a> <a class = "font-body-sm text-body-sm text-on-surface-variant hover:text-primary underline transition-all"
+                                                                       href = "#"> Terms of Service </a> <a class = "font-body-sm text-body-sm text-on-surface-variant hover:text-primary underline transition-all"
+                                                                         href = "#"> Accessibility </a> <a class = "font-body-sm text-body-sm text-on-surface-variant hover:text-primary underline transition-all"
+                                                                      href = "#"> Contact Support </a> </nav> </div> </footer> </main> <!--Toast Container-->
+                <div class = "fixed bottom-8 right-8 z-[60] flex flex-col gap-4"
+                     id = "toast-container"> </div> <script>
+    // Guest log data
+                    const guestLogs = [{
+                        room: 101,
+                        roomType: 'Penthouse',
+                        guest: 'Alexander Vane-Tempest',
+                        checkIn: '2024-10-20',
+                        checkOut: '2024-10-24',
+                        nights: 4,
+                        status: 'checked-in',
+                        category: 'VIP Platinum',
+                        floor: 1
+                    }, {
+                        room: 102,
+                        roomType: 'Royal Suite',
+                        guest: 'Lady Beatrice Ashworth',
+                        checkIn: '2024-10-18',
+                        checkOut: '2024-10-22',
+                        nights: 4,
+                        status: 'checked-out',
+                        category: 'VIP Gold',
+                        floor: 1
+                    }, {
+                        room: 118,
+                        roomType: 'Executive Suite',
+                        guest: 'Sir Reginald Blackmore',
+                        checkIn: '2024-10-21',
+                        checkOut: '2024-10-25',
+                        nights: 4,
+                        status: 'checked-in',
+                        category: 'VIP Platinum',
+                        floor: 1
+                    }, {
+                        room: 201,
+                        roomType: 'Deluxe King',
+                        guest: 'Julianne Moore',
+                        checkIn: '2024-10-19',
+                        checkOut: '2024-10-23',
+                        nights: 4,
+                        status: 'checked-in',
+                        category: 'VIP Gold',
+                        floor: 2
+                    }, {
+                        room: 202,
+                        roomType: 'Deluxe King',
+                        guest: 'Chen Wei-Lin',
+                        checkIn: '2024-10-15',
+                        checkOut: '2024-10-18',
+                        nights: 3,
+                        status: 'checked-out',
+                        category: 'Standard',
+                        floor: 2
+                    }, {
+                        room: 210,
+                        roomType: 'Standard Room',
+                        guest: 'Ms. Elena Vance',
+                        checkIn: '2024-10-12',
+                        checkOut: '2024-10-14',
+                        nights: 2,
+                        status: 'checked-out',
+                        category: 'Standard',
+                        floor: 2
+                    }, {
+                        room: 301,
+                        roomType: 'Junior Suite',
+                        guest: 'Dr. Marcus Ashford',
+                        checkIn: '2024-10-22',
+                        checkOut: '2024-10-26',
+                        nights: 4,
+                        status: 'checked-in',
+                        category: 'VIP Gold',
+                        floor: 3
+                    }, {
+                        room: 304,
+                        roomType: 'Junior Suite',
+                        guest: 'Isabella Montenegro',
+                        checkIn: '2024-10-23',
+                        checkOut: '2024-10-27',
+                        nights: 4,
+                        status: 'reserved',
+                        category: 'VIP Gold',
+                        floor: 3
+                    }, {
+                        room: 312,
+                        roomType: 'Deluxe Twin',
+                        guest: 'Nikolai Petrov',
+                        checkIn: '2024-10-20',
+                        checkOut: '2024-10-22',
+                        nights: 2,
+                        status: 'checked-out',
+                        category: 'Standard',
+                        floor: 3
+                    }, {
+                        room: 402,
+                        roomType: 'Deluxe Suite',
+                        guest: 'Mr. Julian Thorne',
+                        checkIn: '2024-10-24',
+                        checkOut: '2024-10-28',
+                        nights: 4,
+                        status: 'checked-in',
+                        category: 'VIP Platinum',
+                        floor: 4
+                    }, {
+                        room: 405,
+                        roomType: 'Executive Room',
+                        guest: 'Amara Osei',
+                        checkIn: '2024-10-21',
+                        checkOut: '2024-10-23',
+                        nights: 2,
+                        status: 'checked-out',
+                        category: 'Standard',
+                        floor: 4
+                    }, {
+                        room: 410,
+                        roomType: 'Standard Room',
+                        guest: 'Henrik Johansson',
+                        checkIn: '2024-10-25',
+                        checkOut: '2024-10-28',
+                        nights: 3,
+                        status: 'reserved',
+                        category: 'Standard',
+                        floor: 4
+                    }, {
+                        room: 501,
+                        roomType: 'Executive Loft',
+                        guest: 'Priya Chatterjee',
+                        checkIn: '2024-10-19',
+                        checkOut: '2024-10-24',
+                        nights: 5,
+                        status: 'checked-in',
+                        category: 'VIP Gold',
+                        floor: 5
+                    }, {
+                        room: 505,
+                        roomType: 'Penthouse Suite',
+                        guest: 'François Beaumont',
+                        checkIn: '2024-10-22',
+                        checkOut: '2024-10-29',
+                        nights: 7,
+                        status: 'checked-in',
+                        category: 'VIP Platinum',
+                        floor: 5
+                    }, {
+                        room: 203,
+                        roomType: 'Deluxe King',
+                        guest: 'Sarah Jenkins',
+                        checkIn: '2024-10-17',
+                        checkOut: '2024-10-20',
+                        nights: 3,
+                        status: 'checked-out',
+                        category: 'VIP Gold',
+                        floor: 2
+                    }, {
+                        room: 305,
+                        roomType: 'Standard Room',
+                        guest: 'Thomas Müller',
+                        checkIn: '2024-10-26',
+                        checkOut: '2024-10-29',
+                        nights: 3,
+                        status: 'reserved',
+                        category: 'Standard',
+                        floor: 3
+                    }, {
+                        room: 408,
+                        roomType: 'Junior Suite',
+                        guest: 'Yuki Tanaka',
+                        checkIn: '2024-10-14',
+                        checkOut: '2024-10-16',
+                        nights: 2,
+                        status: 'cancelled',
+                        category: 'Standard',
+                        floor: 4
+                    }, {
+                        room: 502,
+                        roomType: 'Executive Loft',
+                        guest: 'Olivia Hartington',
+                        checkIn: '2024-10-23',
+                        checkOut: '2024-10-26',
+                        nights: 3,
+                        status: 'checked-in',
+                        category: 'VIP Gold',
+                        floor: 5
+                    }, ];
+
+                    let currentSort = 'date';
+                    let currentSortDir = 'desc';
+                    let currentPage = 1;
+                    const pageSize = 10;
+
+                    function getStatusBadge(status) {
+                        const map = {
+                            'checked-in': {
+                                bg: 'bg-surface-container-high',
+                                text: 'text-on-primary-container',
+                                label: 'Checked In',
+                                dot: 'bg-secondary'
+                            },
+                            'checked-out': {
+                                bg: 'bg-surface-container',
+                                text: 'text-on-surface-variant',
+                                label: 'Checked Out',
+                                dot: 'bg-outline'
+                            },
+                            'reserved': {
+                                bg: 'bg-secondary-container',
+                                text: 'text-on-secondary-container',
+                                label: 'Reserved',
+                                dot: 'bg-secondary'
+                            },
+                            'cancelled': {
+                                bg: 'bg-error-container',
+                                text: 'text-on-error-container',
+                                label: 'Cancelled',
+                                dot: 'bg-error'
+                            },
+                        };
+                        const s = map[status];
+                        return `<div class="flex items-center gap-2"><div class="w-2 h-2 rounded-full ${s.dot}"></div><span class="px-3 py-1 ${s.bg} ${s.text} text-[11px] font-bold rounded-full uppercase">${s.label}</span></div>`;
+                    }
+
+                    function getCategoryBadge(category) {
+                        if (category.includes('Platinum')) return `<span class="px-3 py-1 bg-primary-container text-on-primary-container text-[11px] font-bold rounded-full uppercase">${category}</span>`;
+                        if (category.includes('Gold')) return `<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[11px] font-bold rounded-full uppercase">${category}</span>`;
+                        return `<span class="px-3 py-1 bg-surface-container-high text-on-surface-variant text-[11px] font-bold rounded-full uppercase">${category}</span>`;
+                    }
+
+                    function formatDate(dateStr) {
+                        const d = new Date(dateStr);
+                        return d.toLocaleDateString('en-US', {
+                            month: 'short',
+                            day: 'numeric',
+                            year: 'numeric'
+                        });
+                    }
+
+                    function getFilteredLogs() {
+                        const statusFilter = document.getElementById('filter-status').value;
+                        const floorFilter = document.getElementById('filter-floor').value;
+                        const searchTerm = document.getElementById('search-input').value.toLowerCase();
+
+                        return guestLogs.filter(log => {
+                            if (statusFilter !== 'all' && log.status !== statusFilter) return false;
+                            if (floorFilter !== 'all' && log.floor !== parseInt(floorFilter)) return false;
+                            if (searchTerm && !log.guest.toLowerCase().includes(searchTerm) && !log.room.toString().includes(searchTerm) && !log.roomType.toLowerCase().includes(searchTerm)) return false;
+                            return true;
+                        });
+                    }
+
+                    function sortBy(field) {
+                        if (currentSort === field) {
+                            currentSortDir = currentSortDir === 'asc' ? 'desc' : 'asc';
+                        } else {
+                            currentSort = field;
+                            currentSortDir = field === 'date' ? 'desc' : 'asc';
+                        }
+                        currentPage = 1;
+
+    // Update button styles
+                        document.querySelectorAll('.sort-btn').forEach(btn => {
+                            btn.classList.remove('active');
+                            btn.classList.add('text-on-surface', 'hover:bg-surface-container-low');
+                        });
+                        const activeBtn = document.getElementById(`sort-${field}`);
+                        activeBtn.classList.add('active');
+                        activeBtn.classList.remove('text-on-surface', 'hover:bg-surface-container-low');
+
+    // Update sort icons
+                        document.getElementById('sort-icon-room').textContent = currentSort === 'room' ? (currentSortDir === 'asc' ? 'arrow_upward' : 'arrow_downward') : '';
+                        document.getElementById('sort-icon-date').textContent = currentSort === 'date' ? (currentSortDir === 'asc' ? 'arrow_upward' : 'arrow_downward') : '';
+
+                        renderTable();
+                    }
+
+                    function filterLogs() {
+                        currentPage = 1;
+                        renderTable();
+                    }
+
+                    function changePage(delta) {
+                        const filtered = getFilteredLogs();
+                        const totalPages = Math.ceil(filtered.length / pageSize);
+                        currentPage = Math.max(1, Math.min(totalPages, currentPage + delta));
+                        renderTable();
+                    }
+
+                    function renderTable() {
+                        let logs = getFilteredLogs();
+
+    // Sort
+                        logs.sort((a, b) => {
+                            let valA, valB;
+                            if (currentSort === 'date') {
+                                valA = new Date(a.checkIn);
+                                valB = new Date(b.checkIn);
+                            } else if (currentSort === 'room') {
+                                valA = a.room;
+                                valB = b.room;
+                            }
+                            if (currentSortDir === 'asc') return valA> valB ? 1 : -1;
+                            return valA <valB ? 1 : -1;
+                        });
+
+                        const totalPages = Math.ceil(logs.length / pageSize);
+                        const start = (currentPage - 1) * pageSize;
+                        const end = Math.min(start + pageSize, logs.length);
+                        const pageData = logs.slice(start, end);
+
+                        const tbody = document.getElementById('guest-log-body');
+                        tbody.innerHTML = pageData.map(log => `
+            <tr class="hover:bg-surface-container-low transition-colors fade-in">
+                <td class="px-6 py-5">
+                    <div class="flex flex-col">
+                        <span class="font-bold text-on-surface">${log.room}</span>
+                        <span class="text-xs text-on-surface-variant">${log.roomType}</span>
+                    </div>
+                </td>
+                <td class="px-6 py-5">
+                    <span class="font-medium text-on-surface">${log.guest}</span>
+                </td>
+                <td class="px-6 py-5 text-sm text-on-surface-variant">${formatDate(log.checkIn)}</td>
+                <td class="px-6 py-5 text-sm text-on-surface-variant">${formatDate(log.checkOut)}</td>
+                <td class="px-6 py-5 text-sm font-bold text-on-surface text-center">${log.nights}</td>
+                <td class="px-6 py-5">${getStatusBadge(log.status)}</td>
+                <td class="px-6 py-5">${getCategoryBadge(log.category)}</td>
+            </tr>
+        `).join('');
+
+    // Update pagination
+                        document.getElementById('pagination-info').textContent = logs.length> 0 ?
+                        `Showing ${start + 1}–${end} of ${logs.length} entries` :
+                            'No entries found';
+                        document.getElementById('prev-btn').disabled = currentPage <= 1;
+                        document.getElementById('next-btn').disabled = currentPage>= totalPages;
+                    }
+
+                    function logOut() {
+                        sessionStorage.removeItem('luxe_auth');
+                        window.location.href = 'secure_access.html';
+                    }
+
+// Initialize
+                    sortBy('date'); </script> </body></html>

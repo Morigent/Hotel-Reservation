@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"> </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL'
+                0, 'wght'
+                300, 'GRAD'
+                0, 'opsz'
+                24;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .luxury-card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .luxury-card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0px 4px 20px rgba(10, 25, 47, 0.05);
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#d8e3fa",
+                        "surface-container-high": "#dee8ff",
+                        "surface": "#f9f9ff",
+                        "on-primary-fixed": "#0d1c32",
+                        "on-secondary-container": "#785a1a",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#111c2c",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#454748",
+                        "tertiary-fixed-dim": "#c5c7c8",
+                        "surface-tint": "#515f78",
+                        "on-secondary-fixed": "#261900",
+                        "surface-bright": "#f9f9ff",
+                        "tertiary-container": "#191c1d",
+                        "background": "#f9f9ff",
+                        "on-surface-variant": "#44474d",
+                        "on-primary-container": "#76849f",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#b9c7e4",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#000000",
+                        "surface-container": "#e7eeff",
+                        "surface-container-low": "#f0f3ff",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#ffdea5",
+                        "outline": "#75777e",
+                        "on-secondary-fixed-variant": "#5d4201",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#ffdea5",
+                        "secondary-fixed-dim": "#e9c176",
+                        "inverse-primary": "#b9c7e4",
+                        "primary": "#000000",
+                        "outline-variant": "#c5c6cd",
+                        "inverse-surface": "#263142",
+                        "on-tertiary-fixed": "#191c1d",
+                        "surface-dim": "#cfdaf1",
+                        "secondary": "#775a19",
+                        "secondary-container": "#fed488",
+                        "primary-container": "#0d1c32",
+                        "primary-fixed": "#d6e3ff",
+                        "on-primary-fixed-variant": "#39475f",
+                        "on-tertiary-container": "#828485",
+                        "inverse-on-surface": "#ebf1ff",
+                        "surface-container-highest": "#d8e3fa",
+                        "tertiary-fixed": "#e1e3e4",
+                        "on-background": "#111c2c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "md": "24px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "xs": "4px",
+                        "sm": "12px",
+                        "lg": "40px",
+                        "margin-desktop": "48px",
+                        "xl": "64px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-lg-mobile": ["Libre Caslon Text"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Libre Caslon Text"],
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Libre Caslon Text"],
+                        "label-md": ["Inter"],
+                        "headline-xl": ["Libre Caslon Text"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {
+                            "lineHeight": "24px",
+                            "fontWeight": "400"
+                        }],
+                        "body-sm": ["14px", {
+                            "lineHeight": "20px",
+                            "fontWeight": "400"
+                        }],
+                        "headline-lg-mobile": ["24px", {
+                            "lineHeight": "32px",
+                            "fontWeight": "400"
+                        }],
+                        "body-lg": ["18px", {
+                            "lineHeight": "28px",
+                            "fontWeight": "400"
+                        }],
+                        "headline-md": ["24px", {
+                            "lineHeight": "32px",
+                            "fontWeight": "400"
+                        }],
+                        "label-sm": ["11px", {
+                            "lineHeight": "14px",
+                            "fontWeight": "500"
+                        }],
+                        "headline-lg": ["32px", {
+                            "lineHeight": "40px",
+                            "fontWeight": "400"
+                        }],
+                        "label-md": ["12px", {
+                            "lineHeight": "16px",
+                            "letterSpacing": "0.05em",
+                            "fontWeight": "600"
+                        }],
+                        "headline-xl": ["48px", {
+                            "lineHeight": "56px",
+                            "letterSpacing": "-0.01em",
+                            "fontWeight": "400"
+                        }]
+                    }
+                },
+            },
+        } </script>
+</head>
+
+<body class="bg-surface text-on-surface">
+    <script>
+            // Auth Guard: Must be logged in to access dashboard
+            (function authGuard() {
+                const session = sessionStorage.getItem('luxe_auth');
+                if (!session) {
+                    window.location.href = '../luxe_concierge_secure_access/code.html';
+                    return;
+                }
+            })(); </script> <!--TopNavBar-->
+    <nav class="w-full top-0 sticky bg-surface border-b border-outline-variant z-50">
+        <div class="flex justify-between items-center px-margin-desktop py-4 max-w-[1440px] mx-auto">
+            <div class="flex items-center gap-xl">
+                <span class="font-headline-md text-headline-md text-primary tracking-tight cursor-pointer"
+                    onclick="window.location.href='../luxe_concierge_landing_page/code.html'"> LUXE CONCIERGE </span>
+                <div class="hidden md:flex gap-8 items-center">
+                    <a class="text-primary border-b-2 border-secondary font-bold pb-1 font-body-md text-body-md"
+                        href="#"> Dashboard </a> <a
+                        class="text-on-surface-variant pb-1 font-body-md text-body-md hover:text-secondary transition-colors"
+                        href="../luxe_concierge_book_by_date/code.html"> Book by Date </a> <a
+                        class="text-on-surface-variant pb-1 font-body-md text-body-md hover:text-secondary transition-colors"
+                        href="../luxe_concierge_book_by_room/code.html"> Book by Room </a>
+                </div>
+            </div>
+        </div>
+        <div class="flex items-center gap-md">
+            <div class="flex items-center gap-sm">
+                <span
+                    class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors">
+                    notifications </span> <span
+                    class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors">
+                    settings </span> <span
+                    class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-error transition-colors"
+                    onclick="logOut()" title="Log Out"> logout </span>
+            </div> <button
+                class="bg-primary-container text-on-primary text-label-md px-6 py-2 rounded uppercase tracking-wider font-bold">
+                New Booking </button>
+        </div>
+        </div>
+    </nav>
+    <div class="flex min-h-screen max-w-[1440px] mx-auto">
+        <!--SideNavBar(Hidden on Mobile) -->
+        <aside
+            class="hidden md:flex flex-col h-screen w-64 sticky top-[72px] p-6 space-y-4 bg-surface-container-low border-r border-outline-variant">
+            <div class="mb-8">
+                <div class="flex items-center gap-sm mb-4">
+                    <div
+                        class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center border border-outline-variant">
+                        <span class="material-symbols-outlined"> person </span>
+                    </div>
+                    <div>
+                        <p class="font-label-md text-label-md uppercase text-primary" id="sidebar-username"> Guest </p>
+                        <p class="font-body-sm text-body-sm text-on-surface-variant"> Logged In </p>
+                    </div>
+                </div>
+            </div>
+            <nav class="flex-grow space-y-2">
+                <a class="flex items-center gap-sm px-4 py-3 bg-secondary-container text-on-secondary-container rounded-lg font-label-md text-label-md uppercase tracking-wider"
+                    href="#">
+                    <span class="material-symbols-outlined" data-icon="dashboard"> dashboard </span>
+                    Dashboard
+                </a>
+
+                <a class="flex items-center gap-sm px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg font-label-md text-label-md uppercase tracking-wider transition-all"
+                    href="../luxe_concierge_book_by_date/code.html">
+                    <span class="material-symbols-outlined"> calendar_today </span>
+                    Book by Date
+                </a> <a
+                    class="flex items-center gap-sm px-4 py-3 text-on-surface-variant hover:bg-surface-container-high rounded-lg font-label-md text-label-md uppercase tracking-wider transition-all"
+                    href="../luxe_concierge_book_by_room/code.html">
+                    <span class="material-symbols-outlined"> meeting_room </span>
+                    Book by Room
+                </a>
+            </nav>
+            <div class="pt-6 border-t border-outline-variant space-y-2">
+                <button
+                    class="w-full py-3 px-4 border border-error text-error font-label-md text-label-md uppercase tracking-wider rounded-lg hover:bg-error-container transition-colors">
+                    Emergency Lockout </button> <a
+                    class="flex items-center gap-sm px-4 py-2 text-on-surface-variant hover:text-primary font-label-md text-label-md uppercase"
+                    href="#">
+                    <span class="material-symbols-outlined" data-icon="help"> help </span> Help Center </a> <a
+                    class="flex items-center gap-sm px-4 py-2 text-on-surface-variant hover:text-primary font-label-md text-label-md uppercase cursor-pointer"
+                    onclick="logOut()">
+                    <span class="material-symbols-outlined" data-icon="logout"> logout </span> Log Out </a>
+            </div>
+        </aside> <!--Main Content-->
+        <main class="flex-grow px-margin-desktop py-lg">
+            <!--Header Section-->
+            <header class="mb-xl">
+                <h1 class="font-headline-xl text-headline-xl text-primary mb-2" id="welcome-heading"> Welcome Back,
+                    Concierge </h1>
+                <p class="font-body-lg text-body-lg text-on-surface-variant"> Oversee guest comfort and room logistics
+                    with precision. </p>
+            </header> <!--Bento Grid Section-->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-xl">
+                <!--Available Rooms Section(Bento Large) -->
+                <section class="md:col-span-8">
+                    <div class="flex items-center justify-between mb-md">
+                        <h2 class="font-headline-md text-headline-md"> Available Accommodations </h2>
+                        <div class="flex gap-2">
+                            <span
+                                class="px-3 py-1 bg-surface-container-high text-on-surface-variant rounded-full text-label-sm uppercase">
+                                All Floors </span> <span
+                                class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-label-sm uppercase">
+                                Available Only </span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-gutter">
+                        <!--Standard Room Card-->
+                        <div
+                            class="bg-surface-container-lowest border border-outline-variant luxury-card-hover rounded overflow-hidden flex flex-col">
+                            <div class="h-48 relative overflow-hidden">
+                                <img alt="Standard Room"
+                                    class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                                    data-alt="A sophisticated and bright luxury standard hotel room with high-quality white linens, a minimalist desk, and soft ambient morning light filtering through sheer curtains. The design is modern corporate with a serene color palette of slate and cream, reflecting an expensive, quiet elegance and five-star hospitality standards."
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMYhXivnd8beP6cQ_V_qR4UEEBchEnh_O1sobDr5G0U5r295gNFsGXxIZ8djUYHrnbQsYecpcryOLiCtWxjmjvtQCAW3-ljLsIK8q-M3-LKvbMjjcOTBu3hgKRZpCHdu8jj3tPy74EfkNDqV82hScZuRyMgADWBJ61ve4UqoOXsNVuFg6Kq7NmsrpJD2A-iOhpYS-ZPbxDRkY07IXjKu6kHSOiQ-LWvFcQZvIBUXmAzwKCsQwntyO0vKxZo3FkjS6bdx4_6D2BA7Go" />
+                                <div
+                                    class="absolute top-4 left-4 bg-primary text-on-primary px-3 py-1 text-label-sm uppercase tracking-widest font-bold">
+                                    Standard </div>
+                            </div>
+                            <div class="p-6 flex-grow">
+                                <div class="flex justify-between items-start mb-4">
+                                    <div>
+                                        <h3 class="font-headline-md text-primary mb-1"> Classic Studio </h3>
+                                        <p class="font-body-sm text-on-surface-variant"> 32 m² | City View | King Bed
+                                        </p>
+                                    </div>
+                                    <div class="text-right">
+                                        <span class="font-headline-md text-secondary"> $150 </span>
+                                        <p class="text-label-sm uppercase text-on-surface-variant"> / Night</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4 mb-6">
+                                    <span class="material-symbols-outlined text-on-surface-variant" title="WiFi"> wifi
+                                    </span> <span class="material-symbols-outlined text-on-surface-variant" title="AC">
+                                        ac_unit </span> <span class="material-symbols-outlined text-on-surface-variant"
+                                        title="Room Service"> flatware </span>
+                                </div> <button
+                                    class="w-full py-3 bg-primary text-on-primary font-label-md uppercase tracking-widest hover:opacity-90 transition-opacity">
+                                    Book Now </button>
+                            </div>
+                        </div> <!--Deluxe Room Card(Unavailable example) -->
+                        <div
+                            class="bg-surface-container-lowest border border-outline-variant luxury-card-hover rounded overflow-hidden flex flex-col opacity-75">
+                            <div class="h-48 relative overflow-hidden grayscale">
+                                <img alt="Deluxe Room" class="w-full h-full object-cover"
+                                    data-alt="An expansive and opulent luxury hotel suite with floor-to-ceiling windows overlooking a twilight skyline. The room features velvet textures in deep navy and gold accents, with a private lounge area and warm, low-contrast architectural lighting. The mood is prestigious, exclusive, and representative of ultimate high-end hospitality services."
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCsV-rwvDSRiLrMs2furn1iV9q7F-Xp-CeTmYqS4H37FaCP5Vcyr4kvnmrqemTnh3tKUpL035_B5CWSiE22HtIRuCFrR27kG86-d0f8YOmNGYXpZFnKnkNqV7PFCfzDxSHQ6bSF5Z3gB0kbo5b3rIblBDQn98NPsLotC-LUDtezTMVj_pzZSH5STWV079FeTXJ7a9WBln0asEV64W_02vb20bxhH8QndZMm2bU0CKZpfMpG2EjevPUJXX_Cm_pfEEmzYMk3Mf60oyb" />
+                                <div class="absolute inset-0 bg-on-surface/40 flex items-center justify-center">
+                                    <span
+                                        class="bg-surface text-on-surface px-4 py-2 font-label-md uppercase tracking-widest border border-outline">
+                                        Fully Booked </span>
+                                </div>
+                                <div
+                                    class="absolute top-4 left-4 bg-secondary text-on-secondary px-3 py-1 text-label-sm uppercase tracking-widest font-bold">
+                                    Deluxe </div>
+                            </div>
+                            <div class="p-6 flex-grow">
+                                <div class="flex justify-between items-start mb-4">
+                                    <div>
+                                        <h3 class="font-headline-md text-primary mb-1"> Executive Suite </h3>
+                                        <p class="font-body-sm text-on-surface-variant"> 64 m² | Ocean View | Master
+                                            Suite </p>
+                                    </div>
+                                    <div class="text-right">
+                                        <span class="font-headline-md text-secondary"> $300 </span>
+                                        <p class="text-label-sm uppercase text-on-surface-variant"> / Night</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4 mb-6">
+                                    <span class="material-symbols-outlined text-on-surface-variant"> wifi </span> <span
+                                        class="material-symbols-outlined text-on-surface-variant"> local_bar </span>
+                                    <span class="material-symbols-outlined text-on-surface-variant"> pool </span> <span
+                                        class="material-symbols-outlined text-on-surface-variant"> spa </span>
+                                </div> <button
+                                    class="w-full py-3 bg-outline-variant text-on-surface-variant font-label-md uppercase tracking-widest cursor-not-allowed"
+                                    disabled=""> Currently Unavailable </button>
+                            </div>
+                        </div>
+                    </div>
+                </section> <!--My Bookings Section(Bento Tall Sidebar) -->
+                <section class="md:col-span-4 flex flex-col">
+                    <h2 class="font-headline-md text-headline-md mb-md"> My Active Bookings </h2>
+                    <div
+                        class="bg-surface-container-low border border-outline-variant p-6 rounded flex-grow space-y-gutter">
+                        <!--Reservation Item 1(Cancellable) -->
+                        <div
+                            class="bg-surface-container-lowest p-gutter border border-outline-variant rounded relative">
+                            <div class="absolute top-4 right-4">
+                                <span
+                                    class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-sm uppercase font-bold">
+                                    Confirmed </span>
+                            </div>
+                            <p class="text-label-sm uppercase text-secondary font-bold mb-2"> Reservation #LX - 9902
+                            </p>
+                            <h4 class="font-headline-md text-primary mb-4"> Mr.Julian Thorne </h4>
+                            <div class="space-y-2 mb-6">
+                                <div class="flex items-center gap-sm text-on-surface-variant">
+                                    <span class="material-symbols-outlined text-[20px]"> calendar_today </span> <span
+                                        class="font-body-sm"> Oct 24 - Oct 28, 2024 </span>
+                                </div>
+                                <div class="flex items-center gap-sm text-on-surface-variant">
+                                    <span class="material-symbols-outlined text-[20px]"> meeting_room </span> <span
+                                        class="font-body-sm"> Room 402• Deluxe Suite </span>
+                                </div>
+                            </div> <button
+                                class="w-full py-2 border border-error text-error font-label-md uppercase tracking-wider hover:bg-error-container transition-colors"
+                                onclick="handleCancel('LX-9902')">
+                                Cancel Order </button>
+                        </div> <!--Reservation Item 2(Non - cancellable) -->
+                        <div
+                            class="bg-surface-container-lowest p-gutter border border-outline-variant rounded opacity-85">
+                            <div class="absolute top-4 right-4">
+                                <span
+                                    class="bg-surface-container-high text-on-surface-variant px-3 py-1 rounded-full text-label-sm uppercase font-bold">
+                                    Checking In Today </span>
+                            </div>
+                            <p class="text-label-sm uppercase text-secondary font-bold mb-2"> Reservation #LX - 8841
+                            </p>
+                            <h4 class="font-headline-md text-primary mb-4"> Ms.Elena Vance </h4>
+                            <div class="space-y-2 mb-6">
+                                <div class="flex items-center gap-sm text-on-surface-variant">
+                                    <span class="material-symbols-outlined text-[20px]"> calendar_today </span> <span
+                                        class="font-body-sm"> Oct 12 - Oct 14, 2024 </span>
+                                </div>
+                                <div class="flex items-center gap-sm text-on-surface-variant">
+                                    <span class="material-symbols-outlined text-[20px]"> meeting_room </span> <span
+                                        class="font-body-sm"> Room 210• Standard Room </span>
+                                </div>
+                            </div>
+                            <div class="relative group">
+                                <button
+                                    class="w-full py-2 border border-outline-variant text-on-surface-variant font-label-md uppercase tracking-wider cursor-not-allowed"
+                                    disabled="">
+                                    Cancel Order </button>
+                                <div
+                                    class="absolute bottom-full left-0 mb-2 w-full hidden group-hover:block transition-all">
+                                    <div class="bg-on-surface text-surface text-label-sm p-2 rounded text-center">
+                                        Cancellation window closed(within 24 h) </div>
+                                </div>
+                            </div>
+                        </div> <!--Empty State Filler-->
+                        <div
+                            class="border-2 border-dashed border-outline-variant h-32 flex flex-col items-center justify-center text-on-surface-variant rounded">
+                            <span class="material-symbols-outlined mb-2"> history </span>
+                            <p class="text-label-sm uppercase font-bold tracking-widest"> No Recent Activity </p>
+                        </div>
+                    </div>
+                </section>
+            </div> <!--Management Summary Table-->
+            <section class="mb-xl">
+                <h2 class="font-headline-md text-headline-md mb-md"> Daily Operations Overview </h2>
+                <div class="bg-surface-container-lowest border border-outline-variant overflow-hidden rounded">
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr class="bg-surface-container-low border-b border-outline-variant">
+                                <th
+                                    class="px-6 py-4 font-label-md text-label-md uppercase tracking-wider text-on-surface-variant">
+                                    Guest Name </th>
+                                <th
+                                    class="px-6 py-4 font-label-md text-label-md uppercase tracking-wider text-on-surface-variant">
+                                    Category </th>
+                                <th
+                                    class="px-6 py-4 font-label-md text-label-md uppercase tracking-wider text-on-surface-variant">
+                                    Status </th>
+                                <th
+                                    class="px-6 py-4 font-label-md text-label-md uppercase tracking-wider text-on-surface-variant text-right">
+                                    Actions </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr
+                                class="border-b border-outline-variant hover:bg-surface-container-low transition-colors h-14">
+                                <td class="px-6 py-4 font-body-md"> Sarah Jenkins </td>
+                                <td class="px-6 py-4"> <span
+                                        class="px-3 py-1 bg-surface-container-high text-on-surface-variant rounded text-label-sm uppercase">
+                                        VIP Gold </span></td>
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-2 h-2 rounded-full bg-secondary"> </div> <span
+                                            class="font-label-md text-label-md uppercase"> Occupied </span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-right">
+                                    <button class="text-secondary hover:underline font-label-md uppercase"> Details
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr
+                                class="border-b border-outline-variant hover:bg-surface-container-low transition-colors h-14">
+                                <td class="px-6 py-4 font-body-md"> Marcus Holloway </td>
+                                <td class="px-6 py-4"> <span
+                                        class="px-3 py-1 bg-surface-container-high text-on-surface-variant rounded text-label-sm uppercase">
+                                        Standard </span></td>
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-2 h-2 rounded-full bg-slate-400"> </div> <span
+                                            class="font-label-md text-label-md uppercase"> Housekeeping </span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-right">
+                                    <button class="text-secondary hover:underline font-label-md uppercase"> Details
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div> <!--Footer-->
+    <footer class="w-full mt-auto bg-surface-container-highest border-t border-outline-variant">
+        <div
+            class="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-md max-w-[1440px] mx-auto">
+            <div class="mb-4 md:mb-0">
+                <span class="font-headline-md text-headline-md text-primary"> LUXE CONCIERGE </span>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-2"> ©2024 LUXE CONCIERGE HOSPITALITY
+                    GROUP.ALL RIGHTS RESERVED. </p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-xl">
+                <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary underline transition-all"
+                    href="#"> Privacy Policy </a> <a
+                    class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary underline transition-all"
+                    href="#"> Terms of Service </a> <a
+                    class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary underline transition-all"
+                    href="#"> Accessibility </a> <a
+                    class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary underline transition-all"
+                    href="#"> Contact Support </a>
+            </div>
+        </div>
+    </footer> <!--Simple Interactivity-->
+    <script>
+        function handleCancel(id) {
+            if (confirm(`Are you sure you want to cancel reservation ${id}? This action cannot be undone.`)) {
+                alert(`Reservation ${id} has been successfully cancelled. A confirmation email has been sent to the guest.`);
+                // Mock logic to hide or update the UI would go here
+            }
+        }
+
+        // Logout function
+        function logOut() {
+            sessionStorage.removeItem('luxe_auth');
+            window.location.href = '../luxe_concierge_secure_access/code.html';
+        }
+
+        // Set welcome message with user's name
+        (function setWelcome() {
+            const session = sessionStorage.getItem('luxe_auth');
+            if (session) {
+                const user = JSON.parse(session);
+                const heading = document.getElementById('welcome-heading');
+                if (heading) {
+                    const displayName = user.username.charAt(0).toUpperCase() + user.username.slice(1);
+                    heading.textContent = `Welcome Back, ${displayName}`;
+                }
+            }
+        })();
+
+        // Dropdown effect simulation
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', function (e) {
+                if (!this.hasAttribute('disabled')) {
+                    const ripple = document.createElement('span');
+                    ripple.className = 'absolute bg-white/20 rounded-full animate-ping';
+                    this.appendChild(ripple);
+                    setTimeout(() => ripple.remove(), 500);
+                }
+            });
+        }); </script>
+</body>
+
+</html>
