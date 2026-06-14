@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Material Symbols */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+body {
+  background-color: #f9f9ff;
+  scroll-behavior: smooth;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Hero gradient overlay */
+.hero-gradient {
+  background: linear-gradient(to bottom, rgba(13, 28, 50, 0.4), rgba(13, 28, 50, 0.7));
+}
+
+/* Glassmorphism card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+}
+
+/* Auth card */
+.auth-card {
+  box-shadow: 0px 4px 20px rgba(10, 25, 47, 0.05);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Dotted background pattern for auth page */
+.bg-pattern {
+  background-image: radial-gradient(#d8e3fa 0.5px, transparent 0.5px);
+  background-size: 24px 24px;
+}
+
+/* Luxury card hover */
+.luxury-card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.luxury-card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 4px 20px rgba(10, 25, 47, 0.05);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #c5c6cd;
+  border-radius: 10px;
+}
+
+/* Modal animations */
+@keyframes fadeOverlay {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.modal-overlay {
+  animation: fadeOverlay 0.3s ease;
+}
+.modal-content {
+  animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Toast animation */
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+.toast-enter {
+  animation: slideInRight 0.3s ease forwards;
+}
