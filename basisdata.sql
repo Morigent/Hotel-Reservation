@@ -1,6 +1,5 @@
 DROP TABLE IF EXISTS staff, facility, review, reservation, payment, guest, room, address, hotel CASCADE;
 
-
 CREATE TABLE hotel (
     hotel_id VARCHAR(10) PRIMARY KEY,
     hotel_name VARCHAR(50) NOT NULL,
@@ -18,7 +17,7 @@ CREATE TABLE address (
         FOREIGN KEY (hotel_hotel_id)
         REFERENCES hotel(hotel_id)
         ON DELETE CASCADE
-);
+);B
 
 CREATE TABLE room (
     room_id VARCHAR(10) PRIMARY KEY,
