@@ -18,7 +18,7 @@ CREATE TABLE address (
         FOREIGN KEY (hotel_hotel_id)
         REFERENCES hotel(hotel_id)
         ON DELETE CASCADE
-);
+);B
 
 CREATE TABLE room (
     room_id VARCHAR(10) PRIMARY KEY,
